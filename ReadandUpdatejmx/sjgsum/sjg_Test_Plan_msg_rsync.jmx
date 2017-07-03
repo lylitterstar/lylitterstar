@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="3.1" jmeter="3.1 r1770033">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1492744873000</longProp>
+        <longProp name="ThreadGroup.end_time">1492744873000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">shujuguan.shujuguan.cn</stringProp>
+          <stringProp name="HTTPSampler.port">443</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+        </ConfigTestElement>
+        <hashTree/>
+        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+          <collectionProp name="CookieManager.cookies"/>
+          <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+          <stringProp name="CookieManager.policy">standard</stringProp>
+          <stringProp name="CookieManager.implementation">org.apache.jmeter.protocol.http.control.HC4CookieHandler</stringProp>
+        </CookieManager>
+        <hashTree/>
+        <OnceOnlyController guiclass="OnceOnlyControllerGui" testclass="OnceOnlyController" testname="Once Only Controller" enabled="true"/>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="enterprise/shujuguan/signin" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="subdomain" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">shujuguan</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">subdomain</stringProp>
+                </elementProp>
+                <elementProp name="username" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">dushanshan@gbase.cn</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">username</stringProp>
+                </elementProp>
+                <elementProp name="password" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">111111</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">password</stringProp>
+                </elementProp>
+                <elementProp name="remember" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">0</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">remember</stringProp>
+                </elementProp>
+                <elementProp name="hash" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">hash</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">enterprise/shujuguan/signin</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+              <boolProp name="ResultCollector.error_logging">false</boolProp>
+              <objProp>
+                <name>saveConfig</name>
+                <value class="SampleSaveConfiguration">
+                  <time>true</time>
+                  <latency>true</latency>
+                  <timestamp>true</timestamp>
+                  <success>true</success>
+                  <label>true</label>
+                  <code>true</code>
+                  <message>true</message>
+                  <threadName>true</threadName>
+                  <dataType>true</dataType>
+                  <encoding>false</encoding>
+                  <assertions>true</assertions>
+                  <subresults>true</subresults>
+                  <responseData>false</responseData>
+                  <samplerData>false</samplerData>
+                  <xml>false</xml>
+                  <fieldNames>true</fieldNames>
+                  <responseHeaders>false</responseHeaders>
+                  <requestHeaders>false</requestHeaders>
+                  <responseDataOnError>false</responseDataOnError>
+                  <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                  <assertionsResultsToSave>0</assertionsResultsToSave>
+                  <bytes>true</bytes>
+                  <sentBytes>true</sentBytes>
+                  <threadCounts>true</threadCounts>
+                  <idleTime>true</idleTime>
+                  <connectTime>true</connectTime>
+                </value>
+              </objProp>
+              <stringProp name="filename"></stringProp>
+            </ResultCollector>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">true</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </LoopController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="api/workcharts/h7981cdd8aea14426a40dffe7f1155121" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;metadata&quot;:&quot;{\&quot;drillHistory\&quot;:[],\&quot;ignore\&quot;:{\&quot;dimensions\&quot;:[],\&quot;all\&quot;:false},\&quot;panels\&quot;:[{\&quot;name\&quot;:\&quot;categories\&quot;,\&quot;items\&quot;:[{\&quot;field\&quot;:{\&quot;categroyQuality\&quot;:0,\&quot;columnName\&quot;:\&quot;c0laf8c8d5775084dd6828605ca5a68bf71\&quot;,\&quot;columnType\&quot;:\&quot;INTEGER\&quot;,\&quot;columnWidth\&quot;:64,\&quot;dataQuality\&quot;:0,\&quot;dataType\&quot;:\&quot;INTEGER\&quot;,\&quot;dbTableName\&quot;:\&quot;o7505522b0f704b28aa706ca899b9762d\&quot;,\&quot;format\&quot;:{\&quot;DATETIME\&quot;:\&quot;yyyy/MM/dd hh:mm:ss\&quot;,\&quot;DAY\&quot;:\&quot;yyyy/MM/dd\&quot;,\&quot;DURATION\&quot;:\&quot;hh:mm&apos;ss\\\&quot;SSS\&quot;,\&quot;MONTH\&quot;:\&quot;yyyy/MM\&quot;,\&quot;QUARTER\&quot;:\&quot;yyyy Q\&quot;,\&quot;TIME\&quot;:\&quot;hh:mm:ss\&quot;,\&quot;YEAR\&quot;:\&quot;yyyy\&quot;,\&quot;currency\&quot;:{\&quot;position\&quot;:\&quot;pre\&quot;,\&quot;symbol\&quot;:\&quot;\&quot;},\&quot;decimals\&quot;:\&quot;auto\&quot;,\&quot;level\&quot;:\&quot;DATETIME\&quot;,\&quot;percentage\&quot;:false,\&quot;separated\&quot;:false},\&quot;level\&quot;:\&quot;DATETIME\&quot;,\&quot;lost\&quot;:false,\&quot;name\&quot;:\&quot;店铺ID\&quot;,\&quot;oriColumnType\&quot;:\&quot;INTEGER\&quot;,\&quot;sourceColumnType\&quot;:\&quot;INTEGER\&quot;,\&quot;sourceIndex\&quot;:0,\&quot;sourceName\&quot;:\&quot;店铺ID\&quot;,\&quot;typeOK\&quot;:true,\&quot;title\&quot;:\&quot;店铺ID\&quot;},\&quot;format\&quot;:{\&quot;mask\&quot;:{\&quot;abbreviations\&quot;:{\&quot;t\&quot;:true,\&quot;b\&quot;:true,\&quot;m\&quot;:true,\&quot;k\&quot;:false},\&quot;separated\&quot;:false,\&quot;decimals\&quot;:\&quot;auto\&quot;,\&quot;isdefault\&quot;:false,\&quot;percent\&quot;:false,\&quot;currency\&quot;:{\&quot;symbol\&quot;:\&quot;\&quot;,\&quot;position\&quot;:\&quot;pre\&quot;},\&quot;fix\&quot;:{\&quot;symbol\&quot;:[\&quot;\&quot;,\&quot;\&quot;],\&quot;position\&quot;:\&quot;pre\&quot;},\&quot;type\&quot;:\&quot;INTEGER\&quot;,\&quot;DATETIME\&quot;:\&quot;yyyy/MM/dd hh:mm:ss\&quot;,\&quot;DAY\&quot;:\&quot;yyyy/MM/dd\&quot;,\&quot;DURATION\&quot;:\&quot;hh:mm&apos;ss\\\&quot;SSS\&quot;,\&quot;MONTH\&quot;:\&quot;yyyy/MM\&quot;,\&quot;QUARTER\&quot;:\&quot;yyyy Q\&quot;,\&quot;TIME\&quot;:\&quot;hh:mm:ss\&quot;,\&quot;YEAR\&quot;:\&quot;yyyy\&quot;,\&quot;level\&quot;:\&quot;DATETIME\&quot;,\&quot;percentage\&quot;:false}}}]},{\&quot;name\&quot;:\&quot;values\&quot;,\&quot;items\&quot;:[{\&quot;field\&quot;:{\&quot;categroyQuality\&quot;:0,\&quot;columnName\&quot;:\&quot;c6u937711d61f3d41d2bdf0668c03dbed88\&quot;,\&quot;columnType\&quot;:\&quot;INTEGER\&quot;,\&quot;columnWidth\&quot;:64,\&quot;dataQuality\&quot;:0,\&quot;dataType\&quot;:\&quot;INTEGER\&quot;,\&quot;dbTableName\&quot;:\&quot;o7505522b0f704b28aa706ca899b9762d\&quot;,\&quot;format\&quot;:{\&quot;DATETIME\&quot;:\&quot;yyyy/MM/dd hh:mm:ss\&quot;,\&quot;DAY\&quot;:\&quot;yyyy/MM/dd\&quot;,\&quot;DURATION\&quot;:\&quot;hh:mm&apos;ss\\\&quot;SSS\&quot;,\&quot;MONTH\&quot;:\&quot;yyyy/MM\&quot;,\&quot;QUARTER\&quot;:\&quot;yyyy Q\&quot;,\&quot;TIME\&quot;:\&quot;hh:mm:ss\&quot;,\&quot;YEAR\&quot;:\&quot;yyyy\&quot;,\&quot;currency\&quot;:{\&quot;position\&quot;:\&quot;pre\&quot;,\&quot;symbol\&quot;:\&quot;\&quot;},\&quot;decimals\&quot;:\&quot;auto\&quot;,\&quot;level\&quot;:\&quot;DATETIME\&quot;,\&quot;percentage\&quot;:false,\&quot;separated\&quot;:false},\&quot;level\&quot;:\&quot;DATETIME\&quot;,\&quot;lost\&quot;:false,\&quot;name\&quot;:\&quot;滞留人数\&quot;,\&quot;oriColumnType\&quot;:\&quot;INTEGER\&quot;,\&quot;sourceColumnType\&quot;:\&quot;INTEGER\&quot;,\&quot;sourceIndex\&quot;:6,\&quot;sourceName\&quot;:\&quot;滞留人数\&quot;,\&quot;typeOK\&quot;:true,\&quot;sort\&quot;:{\&quot;order\&quot;:\&quot;desc\&quot;,\&quot;priority\&quot;:0},\&quot;title\&quot;:\&quot;求和 滞留人数\&quot;,\&quot;derivation\&quot;:\&quot;sum\&quot;},\&quot;format\&quot;:{\&quot;mask\&quot;:{\&quot;abbreviations\&quot;:{\&quot;t\&quot;:true,\&quot;b\&quot;:true,\&quot;m\&quot;:true,\&quot;k\&quot;:false},\&quot;separated\&quot;:false,\&quot;decimals\&quot;:\&quot;auto\&quot;,\&quot;isdefault\&quot;:false,\&quot;percent\&quot;:false,\&quot;currency\&quot;:{\&quot;symbol\&quot;:\&quot;\&quot;,\&quot;position\&quot;:\&quot;pre\&quot;},\&quot;fix\&quot;:{\&quot;symbol\&quot;:[\&quot;\&quot;,\&quot;\&quot;],\&quot;position\&quot;:\&quot;pre\&quot;},\&quot;type\&quot;:\&quot;INTEGER\&quot;,\&quot;DATETIME\&quot;:\&quot;yyyy/MM/dd hh:mm:ss\&quot;,\&quot;DAY\&quot;:\&quot;yyyy/MM/dd\&quot;,\&quot;DURATION\&quot;:\&quot;hh:mm&apos;ss\\\&quot;SSS\&quot;,\&quot;MONTH\&quot;:\&quot;yyyy/MM\&quot;,\&quot;QUARTER\&quot;:\&quot;yyyy Q\&quot;,\&quot;TIME\&quot;:\&quot;hh:mm:ss\&quot;,\&quot;YEAR\&quot;:\&quot;yyyy\&quot;,\&quot;level\&quot;:\&quot;DATETIME\&quot;,\&quot;percentage\&quot;:false}}}]},{\&quot;name\&quot;:\&quot;breakBy\&quot;,\&quot;items\&quot;:[{\&quot;field\&quot;:{\&quot;categroyQuality\&quot;:0,\&quot;columnName\&quot;:\&quot;c0laf8c8d5775084dd6828605ca5a68bf71\&quot;,\&quot;columnType\&quot;:\&quot;INTEGER\&quot;,\&quot;columnWidth\&quot;:64,\&quot;dataQuality\&quot;:0,\&quot;dataType\&quot;:\&quot;INTEGER\&quot;,\&quot;dbTableName\&quot;:\&quot;o7505522b0f704b28aa706ca899b9762d\&quot;,\&quot;format\&quot;:{\&quot;DATETIME\&quot;:\&quot;yyyy/MM/dd hh:mm:ss\&quot;,\&quot;DAY\&quot;:\&quot;yyyy/MM/dd\&quot;,\&quot;DURATION\&quot;:\&quot;hh:mm&apos;ss\\\&quot;SSS\&quot;,\&quot;MONTH\&quot;:\&quot;yyyy/MM\&quot;,\&quot;QUARTER\&quot;:\&quot;yyyy Q\&quot;,\&quot;TIME\&quot;:\&quot;hh:mm:ss\&quot;,\&quot;YEAR\&quot;:\&quot;yyyy\&quot;,\&quot;currency\&quot;:{\&quot;position\&quot;:\&quot;pre\&quot;,\&quot;symbol\&quot;:\&quot;\&quot;},\&quot;decimals\&quot;:\&quot;auto\&quot;,\&quot;level\&quot;:\&quot;DATETIME\&quot;,\&quot;percentage\&quot;:false,\&quot;separated\&quot;:false},\&quot;level\&quot;:\&quot;DATETIME\&quot;,\&quot;lost\&quot;:false,\&quot;name\&quot;:\&quot;店铺ID\&quot;,\&quot;oriColumnType\&quot;:\&quot;INTEGER\&quot;,\&quot;sourceColumnType\&quot;:\&quot;INTEGER\&quot;,\&quot;sourceIndex\&quot;:0,\&quot;sourceName\&quot;:\&quot;店铺ID\&quot;,\&quot;typeOK\&quot;:true,\&quot;title\&quot;:\&quot;店铺ID1\&quot;},\&quot;format\&quot;:{\&quot;mask\&quot;:{\&quot;abbreviations\&quot;:{\&quot;t\&quot;:true,\&quot;b\&quot;:true,\&quot;m\&quot;:true,\&quot;k\&quot;:false},\&quot;separated\&quot;:false,\&quot;decimals\&quot;:\&quot;auto\&quot;,\&quot;isdefault\&quot;:false,\&quot;percent\&quot;:false,\&quot;currency\&quot;:{\&quot;symbol\&quot;:\&quot;\&quot;,\&quot;position\&quot;:\&quot;pre\&quot;},\&quot;fix\&quot;:{\&quot;symbol\&quot;:[\&quot;\&quot;,\&quot;\&quot;],\&quot;position\&quot;:\&quot;pre\&quot;},\&quot;type\&quot;:\&quot;INTEGER\&quot;,\&quot;DATETIME\&quot;:\&quot;yyyy/MM/dd hh:mm:ss\&quot;,\&quot;DAY\&quot;:\&quot;yyyy/MM/dd\&quot;,\&quot;DURATION\&quot;:\&quot;hh:mm&apos;ss\\\&quot;SSS\&quot;,\&quot;MONTH\&quot;:\&quot;yyyy/MM\&quot;,\&quot;QUARTER\&quot;:\&quot;yyyy Q\&quot;,\&quot;TIME\&quot;:\&quot;hh:mm:ss\&quot;,\&quot;YEAR\&quot;:\&quot;yyyy\&quot;,\&quot;level\&quot;:\&quot;DATETIME\&quot;,\&quot;percentage\&quot;:false},\&quot;members\&quot;:{\&quot;1\&quot;:{\&quot;data\&quot;:1,\&quot;text\&quot;:\&quot;1\&quot;,\&quot;color\&quot;:\&quot;#66cc33\&quot;},\&quot;3\&quot;:{\&quot;data\&quot;:3,\&quot;text\&quot;:\&quot;3\&quot;,\&quot;color\&quot;:\&quot;#6699ff\&quot;},\&quot;4\&quot;:{\&quot;data\&quot;:4,\&quot;text\&quot;:\&quot;4\&quot;,\&quot;color\&quot;:\&quot;#99cc99\&quot;},\&quot;5\&quot;:{\&quot;data\&quot;:5,\&quot;text\&quot;:\&quot;5\&quot;,\&quot;color\&quot;:\&quot;#9999cc\&quot;},\&quot;6\&quot;:{\&quot;data\&quot;:6,\&quot;text\&quot;:\&quot;6\&quot;,\&quot;color\&quot;:\&quot;#ff6666\&quot;},\&quot;7\&quot;:{\&quot;data\&quot;:7,\&quot;text\&quot;:\&quot;7\&quot;,\&quot;color\&quot;:\&quot;#cccc66\&quot;},\&quot;8\&quot;:{\&quot;data\&quot;:8,\&quot;text\&quot;:\&quot;8\&quot;,\&quot;color\&quot;:\&quot;#68be1a\&quot;},\&quot;9\&quot;:{\&quot;data\&quot;:9,\&quot;text\&quot;:\&quot;9\&quot;,\&quot;color\&quot;:\&quot;#ffcc33\&quot;},\&quot;5825\&quot;:{\&quot;data\&quot;:5825,\&quot;text\&quot;:\&quot;5825\&quot;,\&quot;color\&quot;:\&quot;#cc99ff\&quot;},\&quot;5826\&quot;:{\&quot;data\&quot;:5826,\&quot;text\&quot;:\&quot;5826\&quot;,\&quot;color\&quot;:\&quot;#cc9999\&quot;},\&quot;5827\&quot;:{\&quot;data\&quot;:5827,\&quot;text\&quot;:\&quot;5827\&quot;,\&quot;color\&quot;:\&quot;#3fbfbf\&quot;},\&quot;5828\&quot;:{\&quot;data\&quot;:5828,\&quot;text\&quot;:\&quot;5828\&quot;,\&quot;color\&quot;:\&quot;#99cccc\&quot;}}}}]}],\&quot;filters\&quot;:[{\&quot;field\&quot;:{\&quot;categroyQuality\&quot;:0,\&quot;columnName\&quot;:\&quot;c0laf8c8d5775084dd6828605ca5a68bf71\&quot;,\&quot;columnType\&quot;:\&quot;INTEGER\&quot;,\&quot;columnWidth\&quot;:64,\&quot;dataQuality\&quot;:0,\&quot;dataType\&quot;:\&quot;INTEGER\&quot;,\&quot;dbTableName\&quot;:\&quot;o7505522b0f704b28aa706ca899b9762d\&quot;,\&quot;format\&quot;:{\&quot;DATETIME\&quot;:\&quot;yyyy/MM/dd hh:mm:ss\&quot;,\&quot;DAY\&quot;:\&quot;yyyy/MM/dd\&quot;,\&quot;DURATION\&quot;:\&quot;hh:mm&apos;ss\\\&quot;SSS\&quot;,\&quot;MONTH\&quot;:\&quot;yyyy/MM\&quot;,\&quot;QUARTER\&quot;:\&quot;yyyy Q\&quot;,\&quot;TIME\&quot;:\&quot;hh:mm:ss\&quot;,\&quot;YEAR\&quot;:\&quot;yyyy\&quot;,\&quot;currency\&quot;:{\&quot;position\&quot;:\&quot;pre\&quot;,\&quot;symbol\&quot;:\&quot;\&quot;},\&quot;decimals\&quot;:\&quot;auto\&quot;,\&quot;level\&quot;:\&quot;DATETIME\&quot;,\&quot;percentage\&quot;:false,\&quot;separated\&quot;:false},\&quot;lost\&quot;:false,\&quot;name\&quot;:\&quot;店铺ID\&quot;,\&quot;oriColumnType\&quot;:\&quot;INTEGER\&quot;,\&quot;sourceColumnType\&quot;:\&quot;INTEGER\&quot;,\&quot;sourceIndex\&quot;:0,\&quot;sourceName\&quot;:\&quot;店铺ID\&quot;,\&quot;typeOK\&quot;:true,\&quot;title\&quot;:\&quot;店铺ID\&quot;},\&quot;collapsed\&quot;:true,\&quot;qs\&quot;:{\&quot;members\&quot;:[\&quot;6\&quot;,\&quot;7\&quot;,\&quot;8\&quot;,\&quot;9\&quot;,\&quot;5825\&quot;,\&quot;5826\&quot;,\&quot;5827\&quot;],\&quot;all\&quot;:false,\&quot;exclude\&quot;:false,\&quot;allSelected\&quot;:false},\&quot;locked\&quot;:false,\&quot;category\&quot;:\&quot;list\&quot;},{\&quot;field\&quot;:{\&quot;categroyQuality\&quot;:0,\&quot;columnName\&quot;:\&quot;c3g04d637f8ce824515a7cadbc2e9081aa1\&quot;,\&quot;columnType\&quot;:\&quot;DECIMAL\&quot;,\&quot;columnWidth\&quot;:64,\&quot;dataQuality\&quot;:0,\&quot;dataType\&quot;:\&quot;DOUBLE\&quot;,\&quot;dbTableName\&quot;:\&quot;o7505522b0f704b28aa706ca899b9762d\&quot;,\&quot;format\&quot;:{\&quot;DATETIME\&quot;:\&quot;yyyy/MM/dd hh:mm:ss\&quot;,\&quot;DAY\&quot;:\&quot;yyyy/MM/dd\&quot;,\&quot;DURATION\&quot;:\&quot;hh:mm&apos;ss\\\&quot;SSS\&quot;,\&quot;MONTH\&quot;:\&quot;yyyy/MM\&quot;,\&quot;QUARTER\&quot;:\&quot;yyyy Q\&quot;,\&quot;TIME\&quot;:\&quot;hh:mm:ss\&quot;,\&quot;YEAR\&quot;:\&quot;yyyy\&quot;,\&quot;currency\&quot;:{\&quot;position\&quot;:\&quot;pre\&quot;,\&quot;symbol\&quot;:\&quot;\&quot;},\&quot;decimals\&quot;:\&quot;auto\&quot;,\&quot;level\&quot;:\&quot;DATETIME\&quot;,\&quot;percentage\&quot;:false,\&quot;separated\&quot;:false},\&quot;level\&quot;:\&quot;DATETIME\&quot;,\&quot;lost\&quot;:false,\&quot;name\&quot;:\&quot;客单价\&quot;,\&quot;oriColumnType\&quot;:\&quot;DECIMAL\&quot;,\&quot;sourceColumnType\&quot;:\&quot;DOUBLE\&quot;,\&quot;sourceIndex\&quot;:3,\&quot;sourceName\&quot;:\&quot;客单价\&quot;,\&quot;typeOK\&quot;:true},\&quot;collapsed\&quot;:true,\&quot;qs\&quot;:{\&quot;members\&quot;:[\&quot;0.4\&quot;,\&quot;0.56\&quot;,\&quot;0.83\&quot;],\&quot;all\&quot;:false,\&quot;exclude\&quot;:true,\&quot;allSelected\&quot;:false},\&quot;locked\&quot;:false,\&quot;category\&quot;:\&quot;list\&quot;}]}&quot;,&quot;styles&quot;:&quot;{\&quot;type\&quot;:\&quot;classic\&quot;,\&quot;legend\&quot;:{\&quot;enabled\&quot;:true,\&quot;value\&quot;:\&quot;bottom\&quot;},\&quot;label\&quot;:{\&quot;enabled\&quot;:true,\&quot;value\&quot;:\&quot;top\&quot;},\&quot;xAxis\&quot;:{\&quot;enabled\&quot;:true,\&quot;value\&quot;:[{\&quot;value\&quot;:\&quot;gridLines\&quot;},{\&quot;value\&quot;:\&quot;labels\&quot;},{\&quot;text\&quot;:\&quot;\&quot;},{\&quot;text\&quot;:\&quot;店铺ID\&quot;},{\&quot;text\&quot;:\&quot;店铺ID\&quot;},{\&quot;text\&quot;:\&quot;店铺ID\&quot;},{\&quot;text\&quot;:\&quot;店铺ID\&quot;},{\&quot;text\&quot;:\&quot;店铺ID\&quot;},{\&quot;text\&quot;:\&quot;店铺ID\&quot;},{\&quot;text\&quot;:\&quot;店铺ID\&quot;},{\&quot;text\&quot;:\&quot;店铺ID\&quot;}]},\&quot;yAxis\&quot;:{\&quot;enabled\&quot;:true,\&quot;value\&quot;:[{\&quot;value\&quot;:\&quot;gridLines\&quot;},{\&quot;value\&quot;:\&quot;labels\&quot;},{\&quot;text\&quot;:\&quot;\&quot;},{\&quot;text\&quot;:\&quot;\&quot;},{\&quot;text\&quot;:\&quot;求和 滞留人数\&quot;},{\&quot;text\&quot;:\&quot;求和 滞留人数\&quot;},{\&quot;text\&quot;:\&quot;求和 滞留人数\&quot;},{\&quot;text\&quot;:\&quot;求和 滞留人数\&quot;},{\&quot;text\&quot;:\&quot;求和 滞留人数\&quot;},{\&quot;text\&quot;:\&quot;求和 滞留人数\&quot;},{\&quot;text\&quot;:\&quot;求和 滞留人数\&quot;}],\&quot;min\&quot;:1000,\&quot;max\&quot;:6907160},\&quot;y2Axis\&quot;:{\&quot;enabled\&quot;:true,\&quot;value\&quot;:[{\&quot;value\&quot;:\&quot;gridLines\&quot;},{\&quot;value\&quot;:\&quot;labels\&quot;},{\&quot;text\&quot;:\&quot;\&quot;},{\&quot;text\&quot;:\&quot;\&quot;},{\&quot;text\&quot;:\&quot;\&quot;},{\&quot;text\&quot;:\&quot;\&quot;},{\&quot;text\&quot;:\&quot;\&quot;},{\&quot;text\&quot;:\&quot;\&quot;},{\&quot;text\&quot;:\&quot;\&quot;},{\&quot;text\&quot;:\&quot;\&quot;},{\&quot;text\&quot;:\&quot;\&quot;}]}}&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+            <stringProp name="HTTPSampler.path">api/workcharts/h7981cdd8aea14426a40dffe7f1155121</stringProp>
+            <stringProp name="HTTPSampler.method">PATCH</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://shujuguan.shujuguan.cn/</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,zh-CN;q=0.8,zh;q=0.5,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-450004177">metadata</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>true</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <sentBytes>true</sentBytes>
+                <threadCounts>true</threadCounts>
+                <idleTime>true</idleTime>
+                <connectTime>true</connectTime>
+              </value>
+            </objProp>
+            <stringProp name="filename"></stringProp>
+          </ResultCollector>
+          <hashTree/>
+          <JMSSampler guiclass="JMSSamplerGui" testclass="JMSSampler" testname="JMS Point-to-Point" enabled="true">
+            <stringProp name="JMSSampler.queueconnectionfactory"></stringProp>
+            <stringProp name="JMSSampler.SendQueue"></stringProp>
+            <stringProp name="JMSSampler.ReceiveQueue"></stringProp>
+            <boolProp name="JMSSampler.isFireAndForget">true</boolProp>
+            <boolProp name="JMSSampler.isNonPersistent">false</boolProp>
+            <boolProp name="JMSSampler.useReqMsgIdAsCorrelId">false</boolProp>
+            <stringProp name="JMSSampler.timeout"></stringProp>
+            <stringProp name="HTTPSamper.xml_data"></stringProp>
+            <stringProp name="JMSSampler.initialContextFactory"></stringProp>
+            <stringProp name="JMSSampler.contextProviderUrl"></stringProp>
+            <elementProp name="JMSSampler.jndiProperties" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <elementProp name="arguments" elementType="JMSProperties">
+              <collectionProp name="JMSProperties.properties"/>
+            </elementProp>
+          </JMSSampler>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

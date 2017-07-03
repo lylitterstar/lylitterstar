@@ -1,0 +1,7 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,Latency,IdleTime,Connect
+1495532898587,1348,23 /api/datatables,200,OK,Thread Group 1-1,text,true,,43477,434,1,1,920,0,646
+1495532899954,229,24 /api/workbooks,200,OK,Thread Group 1-1,text,true,,11174,474,1,1,140,0,0
+1495532900186,397,25 /api/workcharts/brief,200,OK,Thread Group 1-1,text,true,,22635,481,1,1,208,0,0
+1495532898587,1349,23 /api/datatables,200,OK,Thread Group 1-1,text,true,,43477,434,1,1,920,0,646
+1495532899954,239,24 /api/workbooks,200,OK,Thread Group 1-1,text,true,,11174,474,1,1,140,0,0
+1495532900186,387,25 /api/workcharts/brief,200,OK,Thread Group 1-1,text,true,,22635,481,1,1,208,0,0

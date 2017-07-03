@@ -1,0 +1,1875 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="3.1" jmeter="3.1 r1770033">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+        <stringProp name="delimiter">,</stringProp>
+        <stringProp name="fileEncoding"></stringProp>
+        <stringProp name="filename">/home/dushanshan/文档/jmeterTestCase/pyworkplace_dss/ReadandUpdatejmx/verifysum/configData/verify.csv</stringProp>
+        <boolProp name="quotedData">false</boolProp>
+        <boolProp name="recycle">true</boolProp>
+        <stringProp name="shareMode">shareMode.all</stringProp>
+        <boolProp name="stopThread">false</boolProp>
+        <stringProp name="variableNames">host,subdomain,user,pwd,port,PHPSESSID</stringProp>
+      </CSVDataSet>
+      <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="host" elementType="Argument">
+            <stringProp name="Argument.name">host</stringProp>
+            <stringProp name="Argument.value">${host}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="port" elementType="Argument">
+            <stringProp name="Argument.name">port</stringProp>
+            <stringProp name="Argument.value">${port}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="encoding" elementType="Argument">
+            <stringProp name="Argument.name">encoding</stringProp>
+            <stringProp name="Argument.value">utf-8</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="PHPSESSID" elementType="Argument">
+            <stringProp name="Argument.name">PHPSESSID</stringProp>
+            <stringProp name="Argument.value">${PHPSESSID}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+        <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments"/>
+        </elementProp>
+        <stringProp name="HTTPSampler.domain">${host}</stringProp>
+        <stringProp name="HTTPSampler.port">${port}</stringProp>
+        <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+        <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        <stringProp name="HTTPSampler.protocol">https</stringProp>
+        <stringProp name="HTTPSampler.contentEncoding">${encoding}</stringProp>
+        <stringProp name="HTTPSampler.path"></stringProp>
+        <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+        <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+      </ConfigTestElement>
+      <hashTree/>
+      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+        <collectionProp name="CookieManager.cookies">
+          <elementProp name="PHPSESSID" elementType="Cookie" testname="PHPSESSID">
+            <stringProp name="Cookie.value">${PHPSESSID}</stringProp>
+            <stringProp name="Cookie.domain">.shujuguan.cn</stringProp>
+            <stringProp name="Cookie.path">/</stringProp>
+            <boolProp name="Cookie.secure">true</boolProp>
+            <longProp name="Cookie.expires">0</longProp>
+            <boolProp name="Cookie.path_specified">true</boolProp>
+            <boolProp name="Cookie.domain_specified">true</boolProp>
+          </elementProp>
+        </collectionProp>
+        <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+        <stringProp name="CookieManager.policy">standard</stringProp>
+        <stringProp name="CookieManager.implementation">org.apache.jmeter.protocol.http.control.HC4CookieHandler</stringProp>
+      </CookieManager>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1495504530000</longProp>
+        <longProp name="ThreadGroup.end_time">1495504530000</longProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.duration">1</stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="登陆事物" enabled="false">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="506 /enterprise/verify/signin" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="subdomain" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">subdomain</stringProp>
+                  <stringProp name="Argument.value">verify</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="username" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">username</stringProp>
+                  <stringProp name="Argument.value">dushanshan@kekun.org</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="password" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">password</stringProp>
+                  <stringProp name="Argument.value">shujuguan</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="remember" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">remember</stringProp>
+                  <stringProp name="Argument.value">0</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="hash" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">hash</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">verify.shujuguan.cn</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+            <stringProp name="HTTPSampler.path">/enterprise/verify/signin</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://verify.shujuguan.cn/signin</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/x-www-form-urlencoded; charset=UTF-8</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:53.0) Gecko/20100101 Firefox/53.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="3237038">info</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">2</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+              <boolProp name="ResultCollector.error_logging">false</boolProp>
+              <objProp>
+                <name>saveConfig</name>
+                <value class="SampleSaveConfiguration">
+                  <time>true</time>
+                  <latency>true</latency>
+                  <timestamp>true</timestamp>
+                  <success>true</success>
+                  <label>true</label>
+                  <code>true</code>
+                  <message>true</message>
+                  <threadName>true</threadName>
+                  <dataType>true</dataType>
+                  <encoding>false</encoding>
+                  <assertions>true</assertions>
+                  <subresults>true</subresults>
+                  <responseData>false</responseData>
+                  <samplerData>false</samplerData>
+                  <xml>false</xml>
+                  <fieldNames>true</fieldNames>
+                  <responseHeaders>false</responseHeaders>
+                  <requestHeaders>false</requestHeaders>
+                  <responseDataOnError>false</responseDataOnError>
+                  <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                  <assertionsResultsToSave>0</assertionsResultsToSave>
+                  <bytes>true</bytes>
+                  <sentBytes>true</sentBytes>
+                  <threadCounts>true</threadCounts>
+                  <idleTime>true</idleTime>
+                  <connectTime>true</connectTime>
+                </value>
+              </objProp>
+              <stringProp name="filename"></stringProp>
+            </ResultCollector>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="507 /" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">verify.shujuguan.cn</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+            <stringProp name="HTTPSampler.path">/</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://verify.shujuguan.cn/signin</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                  <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                  <stringProp name="Header.value">1</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:53.0) Gecko/20100101 Firefox/53.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="默认首页" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="513 /api/yuntuapp/fingerprint" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="_" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">_</stringProp>
+                  <stringProp name="Argument.value">1495506986384</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">verify.shujuguan.cn</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+            <stringProp name="HTTPSampler.path">/api/yuntuapp/fingerprint</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://verify.shujuguan.cn/</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:53.0) Gecko/20100101 Firefox/53.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="112803">rev</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">2</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="512 /api/workbooks" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">verify.shujuguan.cn</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+            <stringProp name="HTTPSampler.path">/api/workbooks</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://verify.shujuguan.cn/</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:53.0) Gecko/20100101 Firefox/53.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="1296531129">categoryId</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">2</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="511 /api/workcharts/brief" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">verify.shujuguan.cn</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+            <stringProp name="HTTPSampler.path">/api/workcharts/brief</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://verify.shujuguan.cn/</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:53.0) Gecko/20100101 Firefox/53.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="1296531129">categoryId</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">2</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="510 /api/datatables" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">verify.shujuguan.cn</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+            <stringProp name="HTTPSampler.path">/api/datatables</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://verify.shujuguan.cn/</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:53.0) Gecko/20100101 Firefox/53.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-2146436846">accesses</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="517 /api/user" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">verify.shujuguan.cn</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+            <stringProp name="HTTPSampler.path">/api/user</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://verify.shujuguan.cn/</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/x-www-form-urlencoded;charset=utf-8</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:53.0) Gecko/20100101 Firefox/53.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-265850119">userinfo</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="518 /api/languagepack" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">verify.shujuguan.cn</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+            <stringProp name="HTTPSampler.path">/api/languagepack</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://verify.shujuguan.cn/</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:53.0) Gecko/20100101 Firefox/53.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="1522889671">copyright</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="519 /api/category" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">verify.shujuguan.cn</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+            <stringProp name="HTTPSampler.path">/api/category</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://verify.shujuguan.cn/</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:53.0) Gecko/20100101 Firefox/53.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-2146436846">accesses</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">2</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="520 /api/dataconnectors" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">verify.shujuguan.cn</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+            <stringProp name="HTTPSampler.path">/api/dataconnectors</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://verify.shujuguan.cn/</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:53.0) Gecko/20100101 Firefox/53.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="3355">id</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="521 /api/dataflows" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">verify.shujuguan.cn</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+            <stringProp name="HTTPSampler.path">/api/dataflows</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://verify.shujuguan.cn/</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:53.0) Gecko/20100101 Firefox/53.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-1161803523">actions</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">2</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="522 /api/organization/info" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">verify.shujuguan.cn</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+            <stringProp name="HTTPSampler.path">/api/organization/info</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://verify.shujuguan.cn/</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:53.0) Gecko/20100101 Firefox/53.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="3355">id</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">2</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="523 /api/im/imtoken/preference" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="async" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">async</stringProp>
+                  <stringProp name="Argument.value">true</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="ignorejumperrorpage" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">ignorejumperrorpage</stringProp>
+                  <stringProp name="Argument.value">true</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="ignoreErrorMessage" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">ignoreErrorMessage</stringProp>
+                  <stringProp name="Argument.value">true</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">verify.shujuguan.cn</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+            <stringProp name="HTTPSampler.path">/api/im/imtoken/preference</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://verify.shujuguan.cn/</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/x-www-form-urlencoded;charset=utf-8</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:53.0) Gecko/20100101 Firefox/53.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-892481550">status</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">2</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="525 /api/message/system" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">verify.shujuguan.cn</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+            <stringProp name="HTTPSampler.path">/api/message/system</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://verify.shujuguan.cn/</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:53.0) Gecko/20100101 Firefox/53.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="526 /api/token/im" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">verify.shujuguan.cn</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+            <stringProp name="HTTPSampler.path">/api/token/im</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://verify.shujuguan.cn/</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/x-www-form-urlencoded;charset=utf-8</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:53.0) Gecko/20100101 Firefox/53.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="115792">uid</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">2</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="532 /api/im/msg/history" enabled="false">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="[{&quot;targetTopic&quot;:&quot;s5ab826e3082e444c990c1e604a0a1415&quot;,&quot;maxScore&quot;:null,&quot;pageSize&quot;:16},{&quot;targetTopic&quot;:&quot;u2ceb39e27850433fb9c16d31344af016&quot;,&quot;maxScore&quot;:null,&quot;pageSize&quot;:16},{&quot;targetTopic&quot;:&quot;i90e63ca37aa0451d95fd72241d7eed4d&quot;,&quot;maxScore&quot;:null,&quot;pageSize&quot;:16},{&quot;targetTopic&quot;:&quot;l0f9941f76f3a485881a8eb330e406fea&quot;,&quot;maxScore&quot;:null,&quot;pageSize&quot;:16},{&quot;targetTopic&quot;:&quot;t1994608f9c994b128a84e31d82d7d6db&quot;,&quot;maxScore&quot;:null,&quot;pageSize&quot;:16},{&quot;targetTopic&quot;:&quot;b412a17ce48fb4b2eb7d6e60df5e14956&quot;,&quot;maxScore&quot;:null,&quot;pageSize&quot;:16},{&quot;targetTopic&quot;:&quot;m9ddc301393be45cd8addbf4b87a925c5&quot;,&quot;maxScore&quot;:null,&quot;pageSize&quot;:16},{&quot;targetTopic&quot;:&quot;f57dbf0eda23a4c0fab815b1bcbbcf182&quot;,&quot;maxScore&quot;:null,&quot;pageSize&quot;:16},{&quot;targetTopic&quot;:&quot;tc78d4eefc92245259dbe958563edc33e&quot;,&quot;maxScore&quot;:null,&quot;pageSize&quot;:16}]" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">[{&quot;targetTopic&quot;:&quot;s5ab826e3082e444c990c1e604a0a1415&quot;,&quot;maxScore&quot;:null,&quot;pageSize&quot;:16},{&quot;targetTopic&quot;:&quot;u2ceb39e27850433fb9c16d31344af016&quot;,&quot;maxScore&quot;:null,&quot;pageSize&quot;:16},{&quot;targetTopic&quot;:&quot;i90e63ca37aa0451d95fd72241d7eed4d&quot;,&quot;maxScore&quot;:null,&quot;pageSize&quot;:16},{&quot;targetTopic&quot;:&quot;l0f9941f76f3a485881a8eb330e406fea&quot;,&quot;maxScore&quot;:null,&quot;pageSize&quot;:16},{&quot;targetTopic&quot;:&quot;t1994608f9c994b128a84e31d82d7d6db&quot;,&quot;maxScore&quot;:null,&quot;pageSize&quot;:16},{&quot;targetTopic&quot;:&quot;b412a17ce48fb4b2eb7d6e60df5e14956&quot;,&quot;maxScore&quot;:null,&quot;pageSize&quot;:16},{&quot;targetTopic&quot;:&quot;m9ddc301393be45cd8addbf4b87a925c5&quot;,&quot;maxScore&quot;:null,&quot;pageSize&quot;:16},{&quot;targetTopic&quot;:&quot;f57dbf0eda23a4c0fab815b1bcbbcf182&quot;,&quot;maxScore&quot;:null,&quot;pageSize&quot;:16},{&quot;targetTopic&quot;:&quot;tc78d4eefc92245259dbe958563edc33e&quot;,&quot;maxScore&quot;:null,&quot;pageSize&quot;:16}]</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata"></stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">verify.shujuguan.cn</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+            <stringProp name="HTTPSampler.path">/api/im/msg/history</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://verify.shujuguan.cn/</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/x-www-form-urlencoded;charset=utf-8</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:53.0) Gecko/20100101 Firefox/53.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+            <stringProp name="ConstantTimer.delay">300</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="上传数据" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">false</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="api/dataconnectors/excel/upload" enabled="true">
+            <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+              <collectionProp name="HTTPFileArgs.files">
+                <elementProp name="/opt/apache-jmeter-3.1/jmx_test/sjgsum/testData/EXCEL 6w.xlsx" elementType="HTTPFileArg">
+                  <stringProp name="File.path">/opt/apache-jmeter-3.1/jmx_test/sjgsum/testData/EXCEL 6w.xlsx</stringProp>
+                  <stringProp name="File.paramname">files[]</stringProp>
+                  <stringProp name="File.mimetype">application/wps-office.xlsx </stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">api/dataconnectors/excel/upload</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="894469121">dataFileId</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">dataFileId</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;dataFileId&quot;:(&quot;.+?&quot;)</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">NA</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">indexs</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;indexs&quot;:\[(.+?)\]</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">NA</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="true">
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters">${indexs}</stringProp>
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="script">
+
+//indexs
+String indexs=bsh.args[0];
+print(indexs);
+vars.put(&quot;indexs&quot;,indexs);</stringProp>
+            </BeanShellPostProcessor>
+            <hashTree/>
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="true">
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters">${dataFileId}</stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">//recerive variable
+String dataFileId=bsh.args[0];
+print(dataFileId);
+vars.put(&quot;dataFileId&quot;,dataFileId);
+
+</stringProp>
+            </BeanShellPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="api/dataconnectors/excel/createtable" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;dataFileId&quot;:${dataFileId},&quot;sheetIndex&quot;:${indexs},&quot;sourceType&quot;:&quot;EXCEL&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">api/dataconnectors/excel/createtable</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-2146436846">accesses</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>true</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <sentBytes>true</sentBytes>
+                <threadCounts>true</threadCounts>
+                <idleTime>true</idleTime>
+                <connectTime>true</connectTime>
+              </value>
+            </objProp>
+            <stringProp name="filename"></stringProp>
+          </ResultCollector>
+          <hashTree/>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+            <stringProp name="ConstantTimer.delay">500</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="分类创建图表" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">false</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="536 /api/workcharts/wff0d690363a746a3a6e64cec09e5505d" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">verify.shujuguan.cn</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+            <stringProp name="HTTPSampler.path">/api/workcharts/wff0d690363a746a3a6e64cec09e5505d</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://verify.shujuguan.cn/</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:53.0) Gecko/20100101 Firefox/53.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="537 /api/workcharts" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;dataTableId&quot;:&quot;ra2a1f29884b84fb8b5416cc9db49c1ac&quot;,&quot;categoryId&quot;:&quot;default_38_258&quot;,&quot;columnNameMap&quot;:{}}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">verify.shujuguan.cn</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+            <stringProp name="HTTPSampler.path">/api/workcharts</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://verify.shujuguan.cn/</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:53.0) Gecko/20100101 Firefox/53.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extractor_id" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">id</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;id&quot;:(&quot;.+?&quot;),</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">NA</stringProp>
+              <stringProp name="RegexExtractor.match_number">0</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extractor_createDate" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">createDate</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;createDate&quot;:(.+?),&quot;dataTableId&quot;</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">na</stringProp>
+              <stringProp name="RegexExtractor.match_number">0</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="true">
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters">${id},${createDate}</stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">log.info(&quot;===================id============&quot;);
+log.info(bsh.args[0]);
+log.info(&quot;===================createDate============&quot;);
+log.info(bsh.args[1]);
+vars.put(&quot;id&quot;,bsh.args[0]);</stringProp>
+            </BeanShellPostProcessor>
+            <hashTree/>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">300</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="541 /api/workcharts/query" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;categoryId&quot;:&quot;default_38_258&quot;,&quot;columnNameMap&quot;:{},&quot;createDate&quot;:1495515248283,&quot;dataTableId&quot;:&quot;ra2a1f29884b84fb8b5416cc9db49c1ac&quot;,&quot;deleted&quot;:0,&quot;drillCharts&quot;:[],&quot;drillToDetail&quot;:false,&quot;history&quot;:false,&quot;id&quot;:${id},&quot;name&quot;:&quot;ETL_37w_2&quot;,&quot;ownerId&quot;:&quot;38&quot;,&quot;shareState&quot;:0,&quot;shareType&quot;:&quot;PRIVATE_COPY&quot;,&quot;sourceTypes&quot;:[&quot;ETL&quot;],&quot;suggest&quot;:false,&quot;suggestState&quot;:0,&quot;updateDate&quot;:1495515248283,&quot;userId&quot;:&quot;258&quot;,&quot;version&quot;:5,&quot;visualType&quot;:&quot;column_chart&quot;,&quot;share&quot;:false,&quot;shareId&quot;:&quot;&quot;,&quot;entityPackageId&quot;:&quot;&quot;,&quot;userData&quot;:null,&quot;metadata&quot;:&quot;{\&quot;drillHistory\&quot;:[],\&quot;ignore\&quot;:{\&quot;dimensions\&quot;:[],\&quot;all\&quot;:false},\&quot;panels\&quot;:[{\&quot;name\&quot;:\&quot;categories\&quot;,\&quot;items\&quot;:[]},{\&quot;name\&quot;:\&quot;values\&quot;,\&quot;items\&quot;:[]},{\&quot;name\&quot;:\&quot;breakBy\&quot;,\&quot;items\&quot;:[]}],\&quot;filters\&quot;:[]}&quot;,&quot;styles&quot;:&quot;{\&quot;type\&quot;:\&quot;classic\&quot;,\&quot;legend\&quot;:{\&quot;enabled\&quot;:true,\&quot;value\&quot;:\&quot;bottom\&quot;},\&quot;label\&quot;:{\&quot;enabled\&quot;:true,\&quot;value\&quot;:\&quot;top\&quot;},\&quot;xAxis\&quot;:{\&quot;enabled\&quot;:true,\&quot;value\&quot;:[{\&quot;value\&quot;:\&quot;gridLines\&quot;},{\&quot;value\&quot;:\&quot;labels\&quot;}]},\&quot;yAxis\&quot;:{\&quot;enabled\&quot;:true,\&quot;value\&quot;:[{\&quot;value\&quot;:\&quot;gridLines\&quot;},{\&quot;value\&quot;:\&quot;labels\&quot;}]},\&quot;y2Axis\&quot;:{\&quot;enabled\&quot;:true,\&quot;value\&quot;:[{\&quot;value\&quot;:\&quot;gridLines\&quot;},{\&quot;value\&quot;:\&quot;labels\&quot;}]}}&quot;,&quot;title&quot;:&quot;&quot;,&quot;queries&quot;:[]}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">verify.shujuguan.cn</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+            <stringProp name="HTTPSampler.path">/api/workcharts/query</stringProp>
+            <stringProp name="HTTPSampler.method">PUT</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://verify.shujuguan.cn/</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:53.0) Gecko/20100101 Firefox/53.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">1000</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="542 api/datatables/ra2a1f29884b84fb8b5416cc9db49c1ac" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">verify.shujuguan.cn</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+            <stringProp name="HTTPSampler.path">/api/datatables/ra2a1f29884b84fb8b5416cc9db49c1ac</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://verify.shujuguan.cn/</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:53.0) Gecko/20100101 Firefox/53.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="543 /api/workcharts" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;categoryId&quot;:&quot;default_38_258&quot;,&quot;columnNameMap&quot;:{&quot;c758042014&quot;:{&quot;categroyQuality&quot;:0,&quot;columnName&quot;:&quot;c758042014&quot;,&quot;columnType&quot;:&quot;ID&quot;,&quot;columnWidth&quot;:255,&quot;dataQuality&quot;:0,&quot;dataType&quot;:&quot;INTEGER&quot;,&quot;dbTableName&quot;:&quot;ra2a1f29884b84fb8b5416cc9db49c1ac&quot;,&quot;name&quot;:&quot;店铺ID&quot;,&quot;sourceIndex&quot;:0,&quot;sourceName&quot;:&quot;店铺ID&quot;,&quot;typeOK&quot;:true}},&quot;createDate&quot;:1495515248283,&quot;dataTableId&quot;:&quot;ra2a1f29884b84fb8b5416cc9db49c1ac&quot;,&quot;deleted&quot;:0,&quot;drillCharts&quot;:[],&quot;drillToDetail&quot;:false,&quot;history&quot;:false,&quot;id&quot;:&quot;j13f1a218051a4899b1a21327b2bee01e&quot;,&quot;name&quot;:&quot;ETL_37w_2&quot;,&quot;ownerId&quot;:&quot;38&quot;,&quot;shareState&quot;:0,&quot;shareType&quot;:&quot;PRIVATE_COPY&quot;,&quot;sourceTypes&quot;:[&quot;ETL&quot;],&quot;suggest&quot;:false,&quot;suggestState&quot;:0,&quot;updateDate&quot;:1495515248283,&quot;userId&quot;:&quot;258&quot;,&quot;version&quot;:5,&quot;visualType&quot;:&quot;column_chart&quot;,&quot;share&quot;:false,&quot;shareId&quot;:&quot;&quot;,&quot;entityPackageId&quot;:&quot;&quot;,&quot;userData&quot;:null,&quot;metadata&quot;:&quot;{\&quot;drillHistory\&quot;:[],\&quot;ignore\&quot;:{\&quot;dimensions\&quot;:[],\&quot;all\&quot;:false},\&quot;panels\&quot;:[{\&quot;name\&quot;:\&quot;categories\&quot;,\&quot;items\&quot;:[{\&quot;field\&quot;:{\&quot;categroyQuality\&quot;:0,\&quot;columnName\&quot;:\&quot;c758042014\&quot;,\&quot;columnType\&quot;:\&quot;ID\&quot;,\&quot;columnWidth\&quot;:255,\&quot;dataQuality\&quot;:0,\&quot;dataType\&quot;:\&quot;INTEGER\&quot;,\&quot;dbTableName\&quot;:\&quot;ra2a1f29884b84fb8b5416cc9db49c1ac\&quot;,\&quot;format\&quot;:{\&quot;DATETIME\&quot;:\&quot;yyyy/MM/dd hh:mm:ss\&quot;,\&quot;DAY\&quot;:\&quot;yyyy/MM/dd\&quot;,\&quot;DURATION\&quot;:\&quot;hh:mm&apos;ss\\\&quot;SSS\&quot;,\&quot;MONTH\&quot;:\&quot;yyyy/MM\&quot;,\&quot;QUARTER\&quot;:\&quot;yyyy Q\&quot;,\&quot;TIME\&quot;:\&quot;hh:mm:ss\&quot;,\&quot;YEAR\&quot;:\&quot;yyyy\&quot;,\&quot;currency\&quot;:{\&quot;position\&quot;:\&quot;pre\&quot;,\&quot;symbol\&quot;:\&quot;\&quot;},\&quot;decimals\&quot;:\&quot;auto\&quot;,\&quot;level\&quot;:\&quot;DATETIME\&quot;,\&quot;percentage\&quot;:false,\&quot;separated\&quot;:false},\&quot;lost\&quot;:false,\&quot;name\&quot;:\&quot;店铺ID\&quot;,\&quot;sourceIndex\&quot;:0,\&quot;sourceName\&quot;:\&quot;店铺ID\&quot;,\&quot;typeOK\&quot;:true,\&quot;title\&quot;:\&quot;店铺ID\&quot;},\&quot;format\&quot;:{\&quot;mask\&quot;:{\&quot;fix\&quot;:{\&quot;symbol\&quot;:[\&quot;\&quot;,\&quot;\&quot;],\&quot;position\&quot;:\&quot;pre\&quot;},\&quot;type\&quot;:\&quot;ID\&quot;,\&quot;DATETIME\&quot;:\&quot;yyyy/MM/dd hh:mm:ss\&quot;,\&quot;DAY\&quot;:\&quot;yyyy/MM/dd\&quot;,\&quot;DURATION\&quot;:\&quot;hh:mm&apos;ss\\\&quot;SSS\&quot;,\&quot;MONTH\&quot;:\&quot;yyyy/MM\&quot;,\&quot;QUARTER\&quot;:\&quot;yyyy Q\&quot;,\&quot;TIME\&quot;:\&quot;hh:mm:ss\&quot;,\&quot;YEAR\&quot;:\&quot;yyyy\&quot;,\&quot;currency\&quot;:{\&quot;position\&quot;:\&quot;pre\&quot;,\&quot;symbol\&quot;:\&quot;\&quot;},\&quot;decimals\&quot;:\&quot;auto\&quot;,\&quot;level\&quot;:\&quot;DATETIME\&quot;,\&quot;percentage\&quot;:false,\&quot;separated\&quot;:false}}}]},{\&quot;name\&quot;:\&quot;values\&quot;,\&quot;items\&quot;:[]},{\&quot;name\&quot;:\&quot;breakBy\&quot;,\&quot;items\&quot;:[]}],\&quot;filters\&quot;:[]}&quot;,&quot;styles&quot;:&quot;{\&quot;type\&quot;:\&quot;classic\&quot;,\&quot;legend\&quot;:{\&quot;enabled\&quot;:true,\&quot;value\&quot;:\&quot;bottom\&quot;},\&quot;label\&quot;:{\&quot;enabled\&quot;:true,\&quot;value\&quot;:\&quot;top\&quot;},\&quot;xAxis\&quot;:{\&quot;enabled\&quot;:true,\&quot;value\&quot;:[{\&quot;value\&quot;:\&quot;gridLines\&quot;},{\&quot;value\&quot;:\&quot;labels\&quot;},{\&quot;text\&quot;:\&quot;\&quot;},{\&quot;text\&quot;:\&quot;店铺ID\&quot;}]},\&quot;yAxis\&quot;:{\&quot;enabled\&quot;:true,\&quot;value\&quot;:[{\&quot;value\&quot;:\&quot;gridLines\&quot;},{\&quot;value\&quot;:\&quot;labels\&quot;},{\&quot;text\&quot;:\&quot;\&quot;},{\&quot;text\&quot;:\&quot;\&quot;}]},\&quot;y2Axis\&quot;:{\&quot;enabled\&quot;:true,\&quot;value\&quot;:[{\&quot;value\&quot;:\&quot;gridLines\&quot;},{\&quot;value\&quot;:\&quot;labels\&quot;},{\&quot;text\&quot;:\&quot;\&quot;},{\&quot;text\&quot;:\&quot;\&quot;}]}}&quot;,&quot;title&quot;:&quot;&quot;,&quot;queries&quot;:[{&quot;dataId&quot;:&quot;ra2a1f29884b84fb8b5416cc9db49c1ac&quot;,&quot;filters&quot;:[],&quot;groups&quot;:[{&quot;categroyQuality&quot;:0,&quot;columnName&quot;:&quot;c758042014&quot;,&quot;columnType&quot;:&quot;ID&quot;,&quot;columnWidth&quot;:255,&quot;dataQuality&quot;:0,&quot;dataType&quot;:&quot;INTEGER&quot;,&quot;dbTableName&quot;:&quot;ra2a1f29884b84fb8b5416cc9db49c1ac&quot;,&quot;format&quot;:{&quot;DATETIME&quot;:&quot;yyyy/MM/dd hh:mm:ss&quot;,&quot;DAY&quot;:&quot;yyyy/MM/dd&quot;,&quot;DURATION&quot;:&quot;hh:mm&apos;ss\&quot;SSS&quot;,&quot;MONTH&quot;:&quot;yyyy/MM&quot;,&quot;QUARTER&quot;:&quot;yyyy Q&quot;,&quot;TIME&quot;:&quot;hh:mm:ss&quot;,&quot;YEAR&quot;:&quot;yyyy&quot;,&quot;currency&quot;:{&quot;position&quot;:&quot;pre&quot;,&quot;symbol&quot;:&quot;&quot;},&quot;decimals&quot;:&quot;auto&quot;,&quot;level&quot;:&quot;DATETIME&quot;,&quot;percentage&quot;:false,&quot;separated&quot;:false},&quot;lost&quot;:false,&quot;name&quot;:&quot;店铺ID&quot;,&quot;sourceIndex&quot;:0,&quot;sourceName&quot;:&quot;店铺ID&quot;,&quot;typeOK&quot;:true,&quot;title&quot;:&quot;店铺ID&quot;}],&quot;havings&quot;:[],&quot;orders&quot;:[],&quot;queryType&quot;:&quot;single&quot;,&quot;selections&quot;:[{&quot;categroyQuality&quot;:0,&quot;columnName&quot;:&quot;c758042014&quot;,&quot;columnType&quot;:&quot;ID&quot;,&quot;columnWidth&quot;:255,&quot;dataQuality&quot;:0,&quot;dataType&quot;:&quot;INTEGER&quot;,&quot;dbTableName&quot;:&quot;ra2a1f29884b84fb8b5416cc9db49c1ac&quot;,&quot;format&quot;:{&quot;DATETIME&quot;:&quot;yyyy/MM/dd hh:mm:ss&quot;,&quot;DAY&quot;:&quot;yyyy/MM/dd&quot;,&quot;DURATION&quot;:&quot;hh:mm&apos;ss\&quot;SSS&quot;,&quot;MONTH&quot;:&quot;yyyy/MM&quot;,&quot;QUARTER&quot;:&quot;yyyy Q&quot;,&quot;TIME&quot;:&quot;hh:mm:ss&quot;,&quot;YEAR&quot;:&quot;yyyy&quot;,&quot;currency&quot;:{&quot;position&quot;:&quot;pre&quot;,&quot;symbol&quot;:&quot;&quot;},&quot;decimals&quot;:&quot;auto&quot;,&quot;level&quot;:&quot;DATETIME&quot;,&quot;percentage&quot;:false,&quot;separated&quot;:false},&quot;lost&quot;:false,&quot;name&quot;:&quot;店铺ID&quot;,&quot;sourceIndex&quot;:0,&quot;sourceName&quot;:&quot;店铺ID&quot;,&quot;typeOK&quot;:true,&quot;title&quot;:&quot;店铺ID&quot;}],&quot;limit&quot;:{&quot;offset&quot;:0,&quot;count&quot;:1001}},{&quot;dataId&quot;:&quot;ra2a1f29884b84fb8b5416cc9db49c1ac&quot;,&quot;filters&quot;:[],&quot;groups&quot;:[{&quot;categroyQuality&quot;:0,&quot;columnName&quot;:&quot;c758042014&quot;,&quot;columnType&quot;:&quot;ID&quot;,&quot;columnWidth&quot;:255,&quot;dataQuality&quot;:0,&quot;dataType&quot;:&quot;INTEGER&quot;,&quot;dbTableName&quot;:&quot;ra2a1f29884b84fb8b5416cc9db49c1ac&quot;,&quot;format&quot;:{&quot;DATETIME&quot;:&quot;yyyy/MM/dd hh:mm:ss&quot;,&quot;DAY&quot;:&quot;yyyy/MM/dd&quot;,&quot;DURATION&quot;:&quot;hh:mm&apos;ss\&quot;SSS&quot;,&quot;MONTH&quot;:&quot;yyyy/MM&quot;,&quot;QUARTER&quot;:&quot;yyyy Q&quot;,&quot;TIME&quot;:&quot;hh:mm:ss&quot;,&quot;YEAR&quot;:&quot;yyyy&quot;,&quot;currency&quot;:{&quot;position&quot;:&quot;pre&quot;,&quot;symbol&quot;:&quot;&quot;},&quot;decimals&quot;:&quot;auto&quot;,&quot;level&quot;:&quot;DATETIME&quot;,&quot;percentage&quot;:false,&quot;separated&quot;:false},&quot;lost&quot;:false,&quot;name&quot;:&quot;店铺ID&quot;,&quot;sourceIndex&quot;:0,&quot;sourceName&quot;:&quot;店铺ID&quot;,&quot;typeOK&quot;:true,&quot;title&quot;:&quot;店铺ID&quot;}],&quot;havings&quot;:[],&quot;orders&quot;:[],&quot;queryType&quot;:&quot;none&quot;,&quot;selections&quot;:[{&quot;categroyQuality&quot;:0,&quot;columnName&quot;:&quot;c758042014&quot;,&quot;columnType&quot;:&quot;ID&quot;,&quot;columnWidth&quot;:255,&quot;dataQuality&quot;:0,&quot;dataType&quot;:&quot;INTEGER&quot;,&quot;dbTableName&quot;:&quot;ra2a1f29884b84fb8b5416cc9db49c1ac&quot;,&quot;format&quot;:{&quot;DATETIME&quot;:&quot;yyyy/MM/dd hh:mm:ss&quot;,&quot;DAY&quot;:&quot;yyyy/MM/dd&quot;,&quot;DURATION&quot;:&quot;hh:mm&apos;ss\&quot;SSS&quot;,&quot;MONTH&quot;:&quot;yyyy/MM&quot;,&quot;QUARTER&quot;:&quot;yyyy Q&quot;,&quot;TIME&quot;:&quot;hh:mm:ss&quot;,&quot;YEAR&quot;:&quot;yyyy&quot;,&quot;currency&quot;:{&quot;position&quot;:&quot;pre&quot;,&quot;symbol&quot;:&quot;&quot;},&quot;decimals&quot;:&quot;auto&quot;,&quot;level&quot;:&quot;DATETIME&quot;,&quot;percentage&quot;:false,&quot;separated&quot;:false},&quot;lost&quot;:false,&quot;name&quot;:&quot;店铺ID&quot;,&quot;sourceIndex&quot;:0,&quot;sourceName&quot;:&quot;店铺ID&quot;,&quot;typeOK&quot;:true,&quot;title&quot;:&quot;店铺ID&quot;}],&quot;limit&quot;:{&quot;offset&quot;:0,&quot;count&quot;:1001}}]}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">verify.shujuguan.cn</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+            <stringProp name="HTTPSampler.path">api/workcharts</stringProp>
+            <stringProp name="HTTPSampler.method">PUT</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://verify.shujuguan.cn/</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:53.0) Gecko/20100101 Firefox/53.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">300</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">300</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="544 api/datatables/ra2a1f29884b84fb8b5416cc9db49c1ac " enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">verify.shujuguan.cn</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+            <stringProp name="HTTPSampler.path">api/datatables/ra2a1f29884b84fb8b5416cc9db49c1ac </stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://verify.shujuguan.cn/</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:53.0) Gecko/20100101 Firefox/53.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="545 /api/user/behavior" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">[{&quot;datetime&quot;:1495515248380,&quot;time&quot;:&quot;2017-05-23T04:54:08.380Z&quot;,&quot;language&quot;:&quot;zh-CN&quot;,&quot;screenwidth&quot;:1920,&quot;screenheight&quot;:1080,&quot;clientwidth&quot;:1920,&quot;clientheight&quot;:993,&quot;colordepth&quot;:24,&quot;dpi&quot;:&quot;1920*1080&quot;,&quot;href&quot;:&quot;https://verify.shujuguan.cn/#charts/view/s0c806e168a5c45588a2f502fe53e0444&quot;,&quot;host&quot;:&quot;verify.shujuguan.cn&quot;,&quot;hash&quot;:&quot;#charts/view/s0c806e168a5c45588a2f502fe53e0444&quot;,&quot;step&quot;:69,&quot;category&quot;:&quot;chart&quot;,&quot;functional&quot;:&quot;chart_panel&quot;,&quot;action&quot;:&quot;close&quot;,&quot;triggertype&quot;:&quot;api&quot;,&quot;triggeraction&quot;:&quot;call&quot;,&quot;level&quot;:&quot;info&quot;,&quot;actiontitle&quot;:&quot;chart-chart_panel-close&quot;,&quot;actionname&quot;:&quot;图表设计器-添加图表面板-关闭&quot;,&quot;actionid&quot;:&quot;020e03&quot;},{&quot;datetime&quot;:1495515248406,&quot;time&quot;:&quot;2017-05-23T04:54:08.406Z&quot;,&quot;language&quot;:&quot;zh-CN&quot;,&quot;screenwidth&quot;:1920,&quot;screenheight&quot;:1080,&quot;clientwidth&quot;:1920,&quot;clientheight&quot;:993,&quot;colordepth&quot;:24,&quot;dpi&quot;:&quot;1920*1080&quot;,&quot;href&quot;:&quot;https://verify.shujuguan.cn/#charts/view/s0c806e168a5c45588a2f502fe53e0444&quot;,&quot;host&quot;:&quot;verify.shujuguan.cn&quot;,&quot;hash&quot;:&quot;#charts/view/s0c806e168a5c45588a2f502fe53e0444&quot;,&quot;step&quot;:70,&quot;category&quot;:&quot;chart&quot;,&quot;functional&quot;:&quot;workchart&quot;,&quot;action&quot;:&quot;query&quot;,&quot;triggertype&quot;:&quot;api&quot;,&quot;triggeraction&quot;:&quot;call&quot;,&quot;level&quot;:&quot;info&quot;,&quot;actiontitle&quot;:&quot;chart-workchart-query&quot;,&quot;actionname&quot;:&quot;图表设计器-图表业务-查询&quot;,&quot;actionid&quot;:&quot;020fa5&quot;},{&quot;datetime&quot;:1495515249325,&quot;time&quot;:&quot;2017-05-23T04:54:09.325Z&quot;,&quot;language&quot;:&quot;zh-CN&quot;,&quot;screenwidth&quot;:1920,&quot;screenheight&quot;:1080,&quot;clientwidth&quot;:1920,&quot;clientheight&quot;:993,&quot;colordepth&quot;:24,&quot;dpi&quot;:&quot;1920*1080&quot;,&quot;href&quot;:&quot;https://verify.shujuguan.cn/#charts/view/s0c806e168a5c45588a2f502fe53e0444&quot;,&quot;host&quot;:&quot;verify.shujuguan.cn&quot;,&quot;hash&quot;:&quot;#charts/view/s0c806e168a5c45588a2f502fe53e0444&quot;,&quot;step&quot;:71,&quot;category&quot;:&quot;chart&quot;,&quot;functional&quot;:&quot;entitylist_panel&quot;,&quot;action&quot;:&quot;enter_chart_designer&quot;,&quot;triggertype&quot;:&quot;api&quot;,&quot;triggeraction&quot;:&quot;call&quot;,&quot;level&quot;:&quot;info&quot;,&quot;actiontitle&quot;:&quot;chart-entitylist_panel-enter_chart_designer&quot;,&quot;actionname&quot;:&quot;图表设计器-资源列表面板-进入图表设计器&quot;,&quot;actionid&quot;:&quot;022778&quot;},{&quot;datetime&quot;:1495515249326,&quot;time&quot;:&quot;2017-05-23T04:54:09.326Z&quot;,&quot;language&quot;:&quot;zh-CN&quot;,&quot;screenwidth&quot;:1920,&quot;screenheight&quot;:1080,&quot;clientwidth&quot;:1920,&quot;clientheight&quot;:993,&quot;colordepth&quot;:24,&quot;dpi&quot;:&quot;1920*1080&quot;,&quot;href&quot;:&quot;https://verify.shujuguan.cn/#charts/view/s0c806e168a5c45588a2f502fe53e0444&quot;,&quot;host&quot;:&quot;verify.shujuguan.cn&quot;,&quot;hash&quot;:&quot;#charts/view/s0c806e168a5c45588a2f502fe53e0444&quot;,&quot;step&quot;:72,&quot;category&quot;:&quot;chart&quot;,&quot;functional&quot;:&quot;navigator&quot;,&quot;action&quot;:&quot;jump&quot;,&quot;params&quot;:{&quot;from&quot;:&quot;#charts/view/s0c806e168a5c45588a2f502fe53e0444&quot;,&quot;to&quot;:&quot;charts/view/s0c806e168a5c45588a2f502fe53e0444&quot;},&quot;triggertype&quot;:&quot;api&quot;,&quot;triggeraction&quot;:&quot;call&quot;,&quot;level&quot;:&quot;info&quot;,&quot;actiontitle&quot;:&quot;chart-navigator-jump&quot;,&quot;actionname&quot;:&quot;图表设计器-场景切换-跳转&quot;,&quot;actionid&quot;:&quot;020dad&quot;},{&quot;datetime&quot;:1495515251888,&quot;time&quot;:&quot;2017-05-23T04:54:11.888Z&quot;,&quot;language&quot;:&quot;zh-CN&quot;,&quot;screenwidth&quot;:1920,&quot;screenheight&quot;:1080,&quot;clientwidth&quot;:1920,&quot;clientheight&quot;:993,&quot;colordepth&quot;:24,&quot;dpi&quot;:&quot;1920*1080&quot;,&quot;href&quot;:&quot;https://verify.shujuguan.cn/#charts/view/s0c806e168a5c45588a2f502fe53e0444&quot;,&quot;host&quot;:&quot;verify.shujuguan.cn&quot;,&quot;hash&quot;:&quot;#charts/view/s0c806e168a5c45588a2f502fe53e0444&quot;,&quot;step&quot;:73,&quot;category&quot;:&quot;chart&quot;,&quot;functional&quot;:&quot;field_list_panel&quot;,&quot;action&quot;:&quot;open&quot;,&quot;triggertype&quot;:&quot;api&quot;,&quot;triggeraction&quot;:&quot;call&quot;,&quot;level&quot;:&quot;info&quot;,&quot;actiontitle&quot;:&quot;chart-field_list_panel-open&quot;,&quot;actionname&quot;:&quot;图表设计器-字段列表-打开&quot;,&quot;actionid&quot;:&quot;023502&quot;},{&quot;datetime&quot;:1495515251975,&quot;time&quot;:&quot;2017-05-23T04:54:11.975Z&quot;,&quot;language&quot;:&quot;zh-CN&quot;,&quot;screenwidth&quot;:1920,&quot;screenheight&quot;:1080,&quot;clientwidth&quot;:1920,&quot;clientheight&quot;:993,&quot;colordepth&quot;:24,&quot;dpi&quot;:&quot;1920*1080&quot;,&quot;href&quot;:&quot;https://verify.shujuguan.cn/#charts/view/s0c806e168a5c45588a2f502fe53e0444&quot;,&quot;host&quot;:&quot;verify.shujuguan.cn&quot;,&quot;hash&quot;:&quot;#charts/view/s0c806e168a5c45588a2f502fe53e0444&quot;,&quot;step&quot;:74,&quot;category&quot;:&quot;chart&quot;,&quot;functional&quot;:&quot;editing_field_panel&quot;,&quot;action&quot;:&quot;add&quot;,&quot;triggertype&quot;:&quot;mouse&quot;,&quot;triggeraction&quot;:&quot;mousedown&quot;,&quot;mousex&quot;:190,&quot;mousey&quot;:112,&quot;level&quot;:&quot;info&quot;,&quot;actiontitle&quot;:&quot;chart-editing_field_panel-add&quot;,&quot;actionname&quot;:&quot;图表设计器-字段编辑面板-添加&quot;,&quot;actionid&quot;:&quot;021b12&quot;},{&quot;datetime&quot;:1495515252822,&quot;time&quot;:&quot;2017-05-23T04:54:12.822Z&quot;,&quot;language&quot;:&quot;zh-CN&quot;,&quot;screenwidth&quot;:1920,&quot;screenheight&quot;:1080,&quot;clientwidth&quot;:1920,&quot;clientheight&quot;:993,&quot;colordepth&quot;:24,&quot;dpi&quot;:&quot;1920*1080&quot;,&quot;href&quot;:&quot;https://verify.shujuguan.cn/#charts/view/s0c806e168a5c45588a2f502fe53e0444&quot;,&quot;host&quot;:&quot;verify.shujuguan.cn&quot;,&quot;hash&quot;:&quot;#charts/view/s0c806e168a5c45588a2f502fe53e0444&quot;,&quot;step&quot;:75,&quot;category&quot;:&quot;chart&quot;,&quot;functional&quot;:&quot;field_list_panel&quot;,&quot;action&quot;:&quot;close&quot;,&quot;triggertype&quot;:&quot;api&quot;,&quot;triggeraction&quot;:&quot;call&quot;,&quot;level&quot;:&quot;info&quot;,&quot;actiontitle&quot;:&quot;chart-field_list_panel-close&quot;,&quot;actionname&quot;:&quot;图表设计器-字段列表-关闭&quot;,&quot;actionid&quot;:&quot;023503&quot;},{&quot;datetime&quot;:1495515252826,&quot;time&quot;:&quot;2017-05-23T04:54:12.826Z&quot;,&quot;language&quot;:&quot;zh-CN&quot;,&quot;screenwidth&quot;:1920,&quot;screenheight&quot;:1080,&quot;clientwidth&quot;:1920,&quot;clientheight&quot;:993,&quot;colordepth&quot;:24,&quot;dpi&quot;:&quot;1920*1080&quot;,&quot;href&quot;:&quot;https://verify.shujuguan.cn/#charts/view/s0c806e168a5c45588a2f502fe53e0444&quot;,&quot;host&quot;:&quot;verify.shujuguan.cn&quot;,&quot;hash&quot;:&quot;#charts/view/s0c806e168a5c45588a2f502fe53e0444&quot;,&quot;step&quot;:76,&quot;category&quot;:&quot;chart&quot;,&quot;functional&quot;:&quot;field_list_panel&quot;,&quot;action&quot;:&quot;select_field&quot;,&quot;triggertype&quot;:&quot;api&quot;,&quot;triggeraction&quot;:&quot;call&quot;,&quot;level&quot;:&quot;info&quot;,&quot;actiontitle&quot;:&quot;chart-field_list_panel-select_field&quot;,&quot;actionname&quot;:&quot;图表设计器-字段列表-选择字段&quot;,&quot;actionid&quot;:&quot;023510&quot;},{&quot;datetime&quot;:1495515252829,&quot;time&quot;:&quot;2017-05-23T04:54:12.829Z&quot;,&quot;language&quot;:&quot;zh-CN&quot;,&quot;screenwidth&quot;:1920,&quot;screenheight&quot;:1080,&quot;clientwidth&quot;:1920,&quot;clientheight&quot;:993,&quot;colordepth&quot;:24,&quot;dpi&quot;:&quot;1920*1080&quot;,&quot;href&quot;:&quot;https://verify.shujuguan.cn/#charts/view/s0c806e168a5c45588a2f502fe53e0444&quot;,&quot;host&quot;:&quot;verify.shujuguan.cn&quot;,&quot;hash&quot;:&quot;#charts/view/s0c806e168a5c45588a2f502fe53e0444&quot;,&quot;step&quot;:77,&quot;category&quot;:&quot;chart&quot;,&quot;functional&quot;:&quot;workchart&quot;,&quot;action&quot;:&quot;change_styles&quot;,&quot;triggertype&quot;:&quot;api&quot;,&quot;triggeraction&quot;:&quot;call&quot;,&quot;level&quot;:&quot;info&quot;,&quot;actiontitle&quot;:&quot;chart-workchart-change_styles&quot;,&quot;actionname&quot;:&quot;图表设计器-图表业务-修改样式&quot;,&quot;actionid&quot;:&quot;020f46&quot;},{&quot;datetime&quot;:1495515252843,&quot;time&quot;:&quot;2017-05-23T04:54:12.843Z&quot;,&quot;language&quot;:&quot;zh-CN&quot;,&quot;screenwidth&quot;:1920,&quot;screenheight&quot;:1080,&quot;clientwidth&quot;:1920,&quot;clientheight&quot;:993,&quot;colordepth&quot;:24,&quot;dpi&quot;:&quot;1920*1080&quot;,&quot;href&quot;:&quot;https://verify.shujuguan.cn/#charts/view/s0c806e168a5c45588a2f502fe53e0444&quot;,&quot;host&quot;:&quot;verify.shujuguan.cn&quot;,&quot;hash&quot;:&quot;#charts/view/s0c806e168a5c45588a2f502fe53e0444&quot;,&quot;step&quot;:78,&quot;category&quot;:&quot;chart&quot;,&quot;functional&quot;:&quot;workchart&quot;,&quot;action&quot;:&quot;saveandquery&quot;,&quot;triggertype&quot;:&quot;api&quot;,&quot;triggeraction&quot;:&quot;call&quot;,&quot;level&quot;:&quot;info&quot;,&quot;actiontitle&quot;:&quot;chart-workchart-saveandquery&quot;,&quot;actionname&quot;:&quot;图表设计器-图表业务-查询并保存&quot;,&quot;actionid&quot;:&quot;020fa4&quot;}]:</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">verify.shujuguan.cn</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+            <stringProp name="HTTPSampler.path">/api/user/behavior</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://verify.shujuguan.cn/</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/x-www-form-urlencoded; charset=UTF-8</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:53.0) Gecko/20100101 Firefox/53.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/javascript, */*; q=0.01</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="546 /api/workcharts" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;categoryId&quot;:&quot;default_38_258&quot;,&quot;columnNameMap&quot;:{&quot;c758042014&quot;:{&quot;categroyQuality&quot;:0,&quot;columnName&quot;:&quot;c758042014&quot;,&quot;columnType&quot;:&quot;ID&quot;,&quot;columnWidth&quot;:255,&quot;dataQuality&quot;:0,&quot;dataType&quot;:&quot;INTEGER&quot;,&quot;dbTableName&quot;:&quot;ra2a1f29884b84fb8b5416cc9db49c1ac&quot;,&quot;name&quot;:&quot;店铺ID&quot;,&quot;sourceIndex&quot;:0,&quot;sourceName&quot;:&quot;店铺ID&quot;,&quot;typeOK&quot;:true},&quot;c875048305&quot;:{&quot;categroyQuality&quot;:0,&quot;columnName&quot;:&quot;c875048305&quot;,&quot;columnType&quot;:&quot;INTEGER&quot;,&quot;columnWidth&quot;:255,&quot;dataQuality&quot;:0,&quot;dataType&quot;:&quot;INTEGER&quot;,&quot;dbTableName&quot;:&quot;ra2a1f29884b84fb8b5416cc9db49c1ac&quot;,&quot;name&quot;:&quot;滞留人数&quot;,&quot;sourceIndex&quot;:0,&quot;sourceName&quot;:&quot;滞留人数&quot;,&quot;typeOK&quot;:true,&quot;derivation&quot;:&quot;sum&quot;}},&quot;createDate&quot;:1495519228468,&quot;dataTableId&quot;:&quot;ra2a1f29884b84fb8b5416cc9db49c1ac&quot;,&quot;deleted&quot;:0,&quot;drillCharts&quot;:[],&quot;drillToDetail&quot;:false,&quot;history&quot;:false,&quot;id&quot;:&quot;j13f1a218051a4899b1a21327b2bee01e&quot;,&quot;name&quot;:&quot;ETL_37w_2&quot;,&quot;ownerId&quot;:&quot;38&quot;,&quot;shareState&quot;:0,&quot;shareType&quot;:&quot;PRIVATE_COPY&quot;,&quot;sourceTypes&quot;:[&quot;ETL&quot;],&quot;suggest&quot;:false,&quot;suggestState&quot;:0,&quot;updateDate&quot;:1495519228468,&quot;userId&quot;:&quot;258&quot;,&quot;version&quot;:5,&quot;visualType&quot;:&quot;column_chart&quot;,&quot;share&quot;:false,&quot;shareId&quot;:&quot;&quot;,&quot;entityPackageId&quot;:&quot;&quot;,&quot;userData&quot;:null,&quot;metadata&quot;:&quot;{\&quot;drillHistory\&quot;:[],\&quot;ignore\&quot;:{\&quot;dimensions\&quot;:[],\&quot;all\&quot;:false},\&quot;panels\&quot;:[{\&quot;name\&quot;:\&quot;categories\&quot;,\&quot;items\&quot;:[{\&quot;field\&quot;:{\&quot;categroyQuality\&quot;:0,\&quot;columnName\&quot;:\&quot;c758042014\&quot;,\&quot;columnType\&quot;:\&quot;ID\&quot;,\&quot;columnWidth\&quot;:255,\&quot;dataQuality\&quot;:0,\&quot;dataType\&quot;:\&quot;INTEGER\&quot;,\&quot;dbTableName\&quot;:\&quot;ra2a1f29884b84fb8b5416cc9db49c1ac\&quot;,\&quot;format\&quot;:{\&quot;DATETIME\&quot;:\&quot;yyyy/MM/dd hh:mm:ss\&quot;,\&quot;DAY\&quot;:\&quot;yyyy/MM/dd\&quot;,\&quot;DURATION\&quot;:\&quot;hh:mm&apos;ss\\\&quot;SSS\&quot;,\&quot;MONTH\&quot;:\&quot;yyyy/MM\&quot;,\&quot;QUARTER\&quot;:\&quot;yyyy Q\&quot;,\&quot;TIME\&quot;:\&quot;hh:mm:ss\&quot;,\&quot;YEAR\&quot;:\&quot;yyyy\&quot;,\&quot;currency\&quot;:{\&quot;position\&quot;:\&quot;pre\&quot;,\&quot;symbol\&quot;:\&quot;\&quot;},\&quot;decimals\&quot;:\&quot;auto\&quot;,\&quot;level\&quot;:\&quot;DATETIME\&quot;,\&quot;percentage\&quot;:false,\&quot;separated\&quot;:false},\&quot;lost\&quot;:false,\&quot;name\&quot;:\&quot;店铺ID\&quot;,\&quot;sourceIndex\&quot;:0,\&quot;sourceName\&quot;:\&quot;店铺ID\&quot;,\&quot;typeOK\&quot;:true,\&quot;title\&quot;:\&quot;店铺ID\&quot;},\&quot;format\&quot;:{\&quot;mask\&quot;:{\&quot;fix\&quot;:{\&quot;symbol\&quot;:[\&quot;\&quot;,\&quot;\&quot;],\&quot;position\&quot;:\&quot;pre\&quot;},\&quot;type\&quot;:\&quot;ID\&quot;,\&quot;DATETIME\&quot;:\&quot;yyyy/MM/dd hh:mm:ss\&quot;,\&quot;DAY\&quot;:\&quot;yyyy/MM/dd\&quot;,\&quot;DURATION\&quot;:\&quot;hh:mm&apos;ss\\\&quot;SSS\&quot;,\&quot;MONTH\&quot;:\&quot;yyyy/MM\&quot;,\&quot;QUARTER\&quot;:\&quot;yyyy Q\&quot;,\&quot;TIME\&quot;:\&quot;hh:mm:ss\&quot;,\&quot;YEAR\&quot;:\&quot;yyyy\&quot;,\&quot;currency\&quot;:{\&quot;position\&quot;:\&quot;pre\&quot;,\&quot;symbol\&quot;:\&quot;\&quot;},\&quot;decimals\&quot;:\&quot;auto\&quot;,\&quot;level\&quot;:\&quot;DATETIME\&quot;,\&quot;percentage\&quot;:false,\&quot;separated\&quot;:false}}}]},{\&quot;name\&quot;:\&quot;values\&quot;,\&quot;items\&quot;:[{\&quot;field\&quot;:{\&quot;categroyQuality\&quot;:0,\&quot;columnName\&quot;:\&quot;c875048305\&quot;,\&quot;columnType\&quot;:\&quot;INTEGER\&quot;,\&quot;columnWidth\&quot;:255,\&quot;dataQuality\&quot;:0,\&quot;dataType\&quot;:\&quot;INTEGER\&quot;,\&quot;dbTableName\&quot;:\&quot;ra2a1f29884b84fb8b5416cc9db49c1ac\&quot;,\&quot;format\&quot;:{\&quot;DATETIME\&quot;:\&quot;yyyy/MM/dd hh:mm:ss\&quot;,\&quot;DAY\&quot;:\&quot;yyyy/MM/dd\&quot;,\&quot;DURATION\&quot;:\&quot;hh:mm&apos;ss\\\&quot;SSS\&quot;,\&quot;MONTH\&quot;:\&quot;yyyy/MM\&quot;,\&quot;QUARTER\&quot;:\&quot;yyyy Q\&quot;,\&quot;TIME\&quot;:\&quot;hh:mm:ss\&quot;,\&quot;YEAR\&quot;:\&quot;yyyy\&quot;,\&quot;currency\&quot;:{\&quot;position\&quot;:\&quot;pre\&quot;,\&quot;symbol\&quot;:\&quot;\&quot;},\&quot;decimals\&quot;:\&quot;auto\&quot;,\&quot;level\&quot;:\&quot;DATETIME\&quot;,\&quot;percentage\&quot;:false,\&quot;separated\&quot;:false},\&quot;lost\&quot;:false,\&quot;name\&quot;:\&quot;滞留人数\&quot;,\&quot;sourceIndex\&quot;:0,\&quot;sourceName\&quot;:\&quot;滞留人数\&quot;,\&quot;typeOK\&quot;:true,\&quot;sort\&quot;:{\&quot;order\&quot;:\&quot;desc\&quot;,\&quot;priority\&quot;:0},\&quot;title\&quot;:\&quot;求和 滞留人数\&quot;,\&quot;derivation\&quot;:\&quot;sum\&quot;},\&quot;format\&quot;:{\&quot;mask\&quot;:{\&quot;abbreviations\&quot;:{\&quot;t\&quot;:true,\&quot;b\&quot;:true,\&quot;m\&quot;:true,\&quot;k\&quot;:false},\&quot;separated\&quot;:false,\&quot;decimals\&quot;:\&quot;auto\&quot;,\&quot;isdefault\&quot;:false,\&quot;percent\&quot;:false,\&quot;currency\&quot;:{\&quot;symbol\&quot;:\&quot;\&quot;,\&quot;position\&quot;:\&quot;pre\&quot;},\&quot;fix\&quot;:{\&quot;symbol\&quot;:[\&quot;\&quot;,\&quot;\&quot;],\&quot;position\&quot;:\&quot;pre\&quot;},\&quot;type\&quot;:\&quot;INTEGER\&quot;,\&quot;DATETIME\&quot;:\&quot;yyyy/MM/dd hh:mm:ss\&quot;,\&quot;DAY\&quot;:\&quot;yyyy/MM/dd\&quot;,\&quot;DURATION\&quot;:\&quot;hh:mm&apos;ss\\\&quot;SSS\&quot;,\&quot;MONTH\&quot;:\&quot;yyyy/MM\&quot;,\&quot;QUARTER\&quot;:\&quot;yyyy Q\&quot;,\&quot;TIME\&quot;:\&quot;hh:mm:ss\&quot;,\&quot;YEAR\&quot;:\&quot;yyyy\&quot;,\&quot;level\&quot;:\&quot;DATETIME\&quot;,\&quot;percentage\&quot;:false}}}]},{\&quot;name\&quot;:\&quot;breakBy\&quot;,\&quot;items\&quot;:[]}],\&quot;filters\&quot;:[]}&quot;,&quot;styles&quot;:&quot;{\&quot;type\&quot;:\&quot;classic\&quot;,\&quot;legend\&quot;:{\&quot;enabled\&quot;:true,\&quot;value\&quot;:\&quot;bottom\&quot;},\&quot;label\&quot;:{\&quot;enabled\&quot;:true,\&quot;value\&quot;:\&quot;top\&quot;},\&quot;xAxis\&quot;:{\&quot;enabled\&quot;:true,\&quot;value\&quot;:[{\&quot;value\&quot;:\&quot;gridLines\&quot;},{\&quot;value\&quot;:\&quot;labels\&quot;},{\&quot;text\&quot;:\&quot;\&quot;},{\&quot;text\&quot;:\&quot;店铺ID\&quot;},{\&quot;text\&quot;:\&quot;店铺ID\&quot;}]},\&quot;yAxis\&quot;:{\&quot;enabled\&quot;:true,\&quot;value\&quot;:[{\&quot;value\&quot;:\&quot;gridLines\&quot;},{\&quot;value\&quot;:\&quot;labels\&quot;},{\&quot;text\&quot;:\&quot;\&quot;},{\&quot;text\&quot;:\&quot;\&quot;},{\&quot;text\&quot;:\&quot;求和 滞留人数\&quot;}]},\&quot;y2Axis\&quot;:{\&quot;enabled\&quot;:true,\&quot;value\&quot;:[{\&quot;value\&quot;:\&quot;gridLines\&quot;},{\&quot;value\&quot;:\&quot;labels\&quot;},{\&quot;text\&quot;:\&quot;\&quot;},{\&quot;text\&quot;:\&quot;\&quot;},{\&quot;text\&quot;:\&quot;\&quot;}]}}&quot;,&quot;title&quot;:&quot;&quot;,&quot;queries&quot;:[{&quot;dataId&quot;:&quot;ra2a1f29884b84fb8b5416cc9db49c1ac&quot;,&quot;filters&quot;:[],&quot;groups&quot;:[{&quot;categroyQuality&quot;:0,&quot;columnName&quot;:&quot;c758042014&quot;,&quot;columnType&quot;:&quot;ID&quot;,&quot;columnWidth&quot;:255,&quot;dataQuality&quot;:0,&quot;dataType&quot;:&quot;INTEGER&quot;,&quot;dbTableName&quot;:&quot;ra2a1f29884b84fb8b5416cc9db49c1ac&quot;,&quot;format&quot;:{&quot;DATETIME&quot;:&quot;yyyy/MM/dd hh:mm:ss&quot;,&quot;DAY&quot;:&quot;yyyy/MM/dd&quot;,&quot;DURATION&quot;:&quot;hh:mm&apos;ss\&quot;SSS&quot;,&quot;MONTH&quot;:&quot;yyyy/MM&quot;,&quot;QUARTER&quot;:&quot;yyyy Q&quot;,&quot;TIME&quot;:&quot;hh:mm:ss&quot;,&quot;YEAR&quot;:&quot;yyyy&quot;,&quot;currency&quot;:{&quot;position&quot;:&quot;pre&quot;,&quot;symbol&quot;:&quot;&quot;},&quot;decimals&quot;:&quot;auto&quot;,&quot;level&quot;:&quot;DATETIME&quot;,&quot;percentage&quot;:false,&quot;separated&quot;:false},&quot;lost&quot;:false,&quot;name&quot;:&quot;店铺ID&quot;,&quot;sourceIndex&quot;:0,&quot;sourceName&quot;:&quot;店铺ID&quot;,&quot;typeOK&quot;:true,&quot;title&quot;:&quot;店铺ID&quot;}],&quot;havings&quot;:[],&quot;orders&quot;:[{&quot;column&quot;:{&quot;categroyQuality&quot;:0,&quot;columnName&quot;:&quot;c875048305&quot;,&quot;columnType&quot;:&quot;INTEGER&quot;,&quot;columnWidth&quot;:255,&quot;dataQuality&quot;:0,&quot;dataType&quot;:&quot;INTEGER&quot;,&quot;dbTableName&quot;:&quot;ra2a1f29884b84fb8b5416cc9db49c1ac&quot;,&quot;format&quot;:{&quot;DATETIME&quot;:&quot;yyyy/MM/dd hh:mm:ss&quot;,&quot;DAY&quot;:&quot;yyyy/MM/dd&quot;,&quot;DURATION&quot;:&quot;hh:mm&apos;ss\&quot;SSS&quot;,&quot;MONTH&quot;:&quot;yyyy/MM&quot;,&quot;QUARTER&quot;:&quot;yyyy Q&quot;,&quot;TIME&quot;:&quot;hh:mm:ss&quot;,&quot;YEAR&quot;:&quot;yyyy&quot;,&quot;currency&quot;:{&quot;position&quot;:&quot;pre&quot;,&quot;symbol&quot;:&quot;&quot;},&quot;decimals&quot;:&quot;auto&quot;,&quot;level&quot;:&quot;DATETIME&quot;,&quot;percentage&quot;:false,&quot;separated&quot;:false},&quot;lost&quot;:false,&quot;name&quot;:&quot;滞留人数&quot;,&quot;sourceIndex&quot;:0,&quot;sourceName&quot;:&quot;滞留人数&quot;,&quot;typeOK&quot;:true,&quot;sort&quot;:{&quot;order&quot;:&quot;desc&quot;,&quot;priority&quot;:0},&quot;title&quot;:&quot;求和 滞留人数&quot;,&quot;derivation&quot;:&quot;sum&quot;},&quot;sort&quot;:&quot;desc&quot;,&quot;values&quot;:null,&quot;priority&quot;:0}],&quot;queryType&quot;:&quot;single&quot;,&quot;selections&quot;:[{&quot;categroyQuality&quot;:0,&quot;columnName&quot;:&quot;c758042014&quot;,&quot;columnType&quot;:&quot;ID&quot;,&quot;columnWidth&quot;:255,&quot;dataQuality&quot;:0,&quot;dataType&quot;:&quot;INTEGER&quot;,&quot;dbTableName&quot;:&quot;ra2a1f29884b84fb8b5416cc9db49c1ac&quot;,&quot;format&quot;:{&quot;DATETIME&quot;:&quot;yyyy/MM/dd hh:mm:ss&quot;,&quot;DAY&quot;:&quot;yyyy/MM/dd&quot;,&quot;DURATION&quot;:&quot;hh:mm&apos;ss\&quot;SSS&quot;,&quot;MONTH&quot;:&quot;yyyy/MM&quot;,&quot;QUARTER&quot;:&quot;yyyy Q&quot;,&quot;TIME&quot;:&quot;hh:mm:ss&quot;,&quot;YEAR&quot;:&quot;yyyy&quot;,&quot;currency&quot;:{&quot;position&quot;:&quot;pre&quot;,&quot;symbol&quot;:&quot;&quot;},&quot;decimals&quot;:&quot;auto&quot;,&quot;level&quot;:&quot;DATETIME&quot;,&quot;percentage&quot;:false,&quot;separated&quot;:false},&quot;lost&quot;:false,&quot;name&quot;:&quot;店铺ID&quot;,&quot;sourceIndex&quot;:0,&quot;sourceName&quot;:&quot;店铺ID&quot;,&quot;typeOK&quot;:true,&quot;title&quot;:&quot;店铺ID&quot;}],&quot;limit&quot;:{&quot;offset&quot;:0,&quot;count&quot;:1001}},{&quot;dataId&quot;:&quot;ra2a1f29884b84fb8b5416cc9db49c1ac&quot;,&quot;filters&quot;:[],&quot;groups&quot;:[{&quot;categroyQuality&quot;:0,&quot;columnName&quot;:&quot;c758042014&quot;,&quot;columnType&quot;:&quot;ID&quot;,&quot;columnWidth&quot;:255,&quot;dataQuality&quot;:0,&quot;dataType&quot;:&quot;INTEGER&quot;,&quot;dbTableName&quot;:&quot;ra2a1f29884b84fb8b5416cc9db49c1ac&quot;,&quot;format&quot;:{&quot;DATETIME&quot;:&quot;yyyy/MM/dd hh:mm:ss&quot;,&quot;DAY&quot;:&quot;yyyy/MM/dd&quot;,&quot;DURATION&quot;:&quot;hh:mm&apos;ss\&quot;SSS&quot;,&quot;MONTH&quot;:&quot;yyyy/MM&quot;,&quot;QUARTER&quot;:&quot;yyyy Q&quot;,&quot;TIME&quot;:&quot;hh:mm:ss&quot;,&quot;YEAR&quot;:&quot;yyyy&quot;,&quot;currency&quot;:{&quot;position&quot;:&quot;pre&quot;,&quot;symbol&quot;:&quot;&quot;},&quot;decimals&quot;:&quot;auto&quot;,&quot;level&quot;:&quot;DATETIME&quot;,&quot;percentage&quot;:false,&quot;separated&quot;:false},&quot;lost&quot;:false,&quot;name&quot;:&quot;店铺ID&quot;,&quot;sourceIndex&quot;:0,&quot;sourceName&quot;:&quot;店铺ID&quot;,&quot;typeOK&quot;:true,&quot;title&quot;:&quot;店铺ID&quot;}],&quot;havings&quot;:[],&quot;orders&quot;:[{&quot;column&quot;:{&quot;categroyQuality&quot;:0,&quot;columnName&quot;:&quot;c875048305&quot;,&quot;columnType&quot;:&quot;INTEGER&quot;,&quot;columnWidth&quot;:255,&quot;dataQuality&quot;:0,&quot;dataType&quot;:&quot;INTEGER&quot;,&quot;dbTableName&quot;:&quot;ra2a1f29884b84fb8b5416cc9db49c1ac&quot;,&quot;format&quot;:{&quot;DATETIME&quot;:&quot;yyyy/MM/dd hh:mm:ss&quot;,&quot;DAY&quot;:&quot;yyyy/MM/dd&quot;,&quot;DURATION&quot;:&quot;hh:mm&apos;ss\&quot;SSS&quot;,&quot;MONTH&quot;:&quot;yyyy/MM&quot;,&quot;QUARTER&quot;:&quot;yyyy Q&quot;,&quot;TIME&quot;:&quot;hh:mm:ss&quot;,&quot;YEAR&quot;:&quot;yyyy&quot;,&quot;currency&quot;:{&quot;position&quot;:&quot;pre&quot;,&quot;symbol&quot;:&quot;&quot;},&quot;decimals&quot;:&quot;auto&quot;,&quot;level&quot;:&quot;DATETIME&quot;,&quot;percentage&quot;:false,&quot;separated&quot;:false},&quot;lost&quot;:false,&quot;name&quot;:&quot;滞留人数&quot;,&quot;sourceIndex&quot;:0,&quot;sourceName&quot;:&quot;滞留人数&quot;,&quot;typeOK&quot;:true,&quot;sort&quot;:{&quot;order&quot;:&quot;desc&quot;,&quot;priority&quot;:0},&quot;title&quot;:&quot;求和 滞留人数&quot;,&quot;derivation&quot;:&quot;sum&quot;},&quot;sort&quot;:&quot;desc&quot;,&quot;values&quot;:null,&quot;priority&quot;:0}],&quot;queryType&quot;:&quot;none&quot;,&quot;selections&quot;:[{&quot;categroyQuality&quot;:0,&quot;columnName&quot;:&quot;c758042014&quot;,&quot;columnType&quot;:&quot;ID&quot;,&quot;columnWidth&quot;:255,&quot;dataQuality&quot;:0,&quot;dataType&quot;:&quot;INTEGER&quot;,&quot;dbTableName&quot;:&quot;ra2a1f29884b84fb8b5416cc9db49c1ac&quot;,&quot;format&quot;:{&quot;DATETIME&quot;:&quot;yyyy/MM/dd hh:mm:ss&quot;,&quot;DAY&quot;:&quot;yyyy/MM/dd&quot;,&quot;DURATION&quot;:&quot;hh:mm&apos;ss\&quot;SSS&quot;,&quot;MONTH&quot;:&quot;yyyy/MM&quot;,&quot;QUARTER&quot;:&quot;yyyy Q&quot;,&quot;TIME&quot;:&quot;hh:mm:ss&quot;,&quot;YEAR&quot;:&quot;yyyy&quot;,&quot;currency&quot;:{&quot;position&quot;:&quot;pre&quot;,&quot;symbol&quot;:&quot;&quot;},&quot;decimals&quot;:&quot;auto&quot;,&quot;level&quot;:&quot;DATETIME&quot;,&quot;percentage&quot;:false,&quot;separated&quot;:false},&quot;lost&quot;:false,&quot;name&quot;:&quot;店铺ID&quot;,&quot;sourceIndex&quot;:0,&quot;sourceName&quot;:&quot;店铺ID&quot;,&quot;typeOK&quot;:true,&quot;title&quot;:&quot;店铺ID&quot;},{&quot;categroyQuality&quot;:0,&quot;columnName&quot;:&quot;c875048305&quot;,&quot;columnType&quot;:&quot;INTEGER&quot;,&quot;columnWidth&quot;:255,&quot;dataQuality&quot;:0,&quot;dataType&quot;:&quot;INTEGER&quot;,&quot;dbTableName&quot;:&quot;ra2a1f29884b84fb8b5416cc9db49c1ac&quot;,&quot;format&quot;:{&quot;DATETIME&quot;:&quot;yyyy/MM/dd hh:mm:ss&quot;,&quot;DAY&quot;:&quot;yyyy/MM/dd&quot;,&quot;DURATION&quot;:&quot;hh:mm&apos;ss\&quot;SSS&quot;,&quot;MONTH&quot;:&quot;yyyy/MM&quot;,&quot;QUARTER&quot;:&quot;yyyy Q&quot;,&quot;TIME&quot;:&quot;hh:mm:ss&quot;,&quot;YEAR&quot;:&quot;yyyy&quot;,&quot;currency&quot;:{&quot;position&quot;:&quot;pre&quot;,&quot;symbol&quot;:&quot;&quot;},&quot;decimals&quot;:&quot;auto&quot;,&quot;level&quot;:&quot;DATETIME&quot;,&quot;percentage&quot;:false,&quot;separated&quot;:false},&quot;lost&quot;:false,&quot;name&quot;:&quot;滞留人数&quot;,&quot;sourceIndex&quot;:0,&quot;sourceName&quot;:&quot;滞留人数&quot;,&quot;typeOK&quot;:true,&quot;sort&quot;:{&quot;order&quot;:&quot;desc&quot;,&quot;priority&quot;:0},&quot;title&quot;:&quot;求和 滞留人数&quot;,&quot;derivation&quot;:&quot;sum&quot;}],&quot;limit&quot;:{&quot;offset&quot;:0,&quot;count&quot;:1001}},{&quot;dataId&quot;:&quot;ra2a1f29884b84fb8b5416cc9db49c1ac&quot;,&quot;filters&quot;:[],&quot;groups&quot;:[{&quot;categroyQuality&quot;:0,&quot;columnName&quot;:&quot;c758042014&quot;,&quot;columnType&quot;:&quot;ID&quot;,&quot;columnWidth&quot;:255,&quot;dataQuality&quot;:0,&quot;dataType&quot;:&quot;INTEGER&quot;,&quot;dbTableName&quot;:&quot;ra2a1f29884b84fb8b5416cc9db49c1ac&quot;,&quot;format&quot;:{&quot;DATETIME&quot;:&quot;yyyy/MM/dd hh:mm:ss&quot;,&quot;DAY&quot;:&quot;yyyy/MM/dd&quot;,&quot;DURATION&quot;:&quot;hh:mm&apos;ss\&quot;SSS&quot;,&quot;MONTH&quot;:&quot;yyyy/MM&quot;,&quot;QUARTER&quot;:&quot;yyyy Q&quot;,&quot;TIME&quot;:&quot;hh:mm:ss&quot;,&quot;YEAR&quot;:&quot;yyyy&quot;,&quot;currency&quot;:{&quot;position&quot;:&quot;pre&quot;,&quot;symbol&quot;:&quot;&quot;},&quot;decimals&quot;:&quot;auto&quot;,&quot;level&quot;:&quot;DATETIME&quot;,&quot;percentage&quot;:false,&quot;separated&quot;:false},&quot;lost&quot;:false,&quot;name&quot;:&quot;店铺ID&quot;,&quot;sourceIndex&quot;:0,&quot;sourceName&quot;:&quot;店铺ID&quot;,&quot;typeOK&quot;:true,&quot;title&quot;:&quot;店铺ID&quot;}],&quot;havings&quot;:[],&quot;orders&quot;:[{&quot;column&quot;:{&quot;categroyQuality&quot;:0,&quot;columnName&quot;:&quot;c875048305&quot;,&quot;columnType&quot;:&quot;INTEGER&quot;,&quot;columnWidth&quot;:255,&quot;dataQuality&quot;:0,&quot;dataType&quot;:&quot;INTEGER&quot;,&quot;dbTableName&quot;:&quot;ra2a1f29884b84fb8b5416cc9db49c1ac&quot;,&quot;format&quot;:{&quot;DATETIME&quot;:&quot;yyyy/MM/dd hh:mm:ss&quot;,&quot;DAY&quot;:&quot;yyyy/MM/dd&quot;,&quot;DURATION&quot;:&quot;hh:mm&apos;ss\&quot;SSS&quot;,&quot;MONTH&quot;:&quot;yyyy/MM&quot;,&quot;QUARTER&quot;:&quot;yyyy Q&quot;,&quot;TIME&quot;:&quot;hh:mm:ss&quot;,&quot;YEAR&quot;:&quot;yyyy&quot;,&quot;currency&quot;:{&quot;position&quot;:&quot;pre&quot;,&quot;symbol&quot;:&quot;&quot;},&quot;decimals&quot;:&quot;auto&quot;,&quot;level&quot;:&quot;DATETIME&quot;,&quot;percentage&quot;:false,&quot;separated&quot;:false},&quot;lost&quot;:false,&quot;name&quot;:&quot;滞留人数&quot;,&quot;sourceIndex&quot;:0,&quot;sourceName&quot;:&quot;滞留人数&quot;,&quot;typeOK&quot;:true,&quot;sort&quot;:{&quot;order&quot;:&quot;desc&quot;,&quot;priority&quot;:0},&quot;title&quot;:&quot;求和 滞留人数&quot;,&quot;derivation&quot;:&quot;sum&quot;},&quot;sort&quot;:&quot;desc&quot;,&quot;values&quot;:null,&quot;priority&quot;:0}],&quot;queryType&quot;:&quot;kpi&quot;,&quot;selections&quot;:[{&quot;categroyQuality&quot;:0,&quot;columnName&quot;:&quot;c758042014&quot;,&quot;columnType&quot;:&quot;ID&quot;,&quot;columnWidth&quot;:255,&quot;dataQuality&quot;:0,&quot;dataType&quot;:&quot;INTEGER&quot;,&quot;dbTableName&quot;:&quot;ra2a1f29884b84fb8b5416cc9db49c1ac&quot;,&quot;format&quot;:{&quot;DATETIME&quot;:&quot;yyyy/MM/dd hh:mm:ss&quot;,&quot;DAY&quot;:&quot;yyyy/MM/dd&quot;,&quot;DURATION&quot;:&quot;hh:mm&apos;ss\&quot;SSS&quot;,&quot;MONTH&quot;:&quot;yyyy/MM&quot;,&quot;QUARTER&quot;:&quot;yyyy Q&quot;,&quot;TIME&quot;:&quot;hh:mm:ss&quot;,&quot;YEAR&quot;:&quot;yyyy&quot;,&quot;currency&quot;:{&quot;position&quot;:&quot;pre&quot;,&quot;symbol&quot;:&quot;&quot;},&quot;decimals&quot;:&quot;auto&quot;,&quot;level&quot;:&quot;DATETIME&quot;,&quot;percentage&quot;:false,&quot;separated&quot;:false},&quot;lost&quot;:false,&quot;name&quot;:&quot;店铺ID&quot;,&quot;sourceIndex&quot;:0,&quot;sourceName&quot;:&quot;店铺ID&quot;,&quot;typeOK&quot;:true,&quot;title&quot;:&quot;店铺ID&quot;},{&quot;categroyQuality&quot;:0,&quot;columnName&quot;:&quot;c875048305&quot;,&quot;columnType&quot;:&quot;INTEGER&quot;,&quot;columnWidth&quot;:255,&quot;dataQuality&quot;:0,&quot;dataType&quot;:&quot;INTEGER&quot;,&quot;dbTableName&quot;:&quot;ra2a1f29884b84fb8b5416cc9db49c1ac&quot;,&quot;format&quot;:{&quot;DATETIME&quot;:&quot;yyyy/MM/dd hh:mm:ss&quot;,&quot;DAY&quot;:&quot;yyyy/MM/dd&quot;,&quot;DURATION&quot;:&quot;hh:mm&apos;ss\&quot;SSS&quot;,&quot;MONTH&quot;:&quot;yyyy/MM&quot;,&quot;QUARTER&quot;:&quot;yyyy Q&quot;,&quot;TIME&quot;:&quot;hh:mm:ss&quot;,&quot;YEAR&quot;:&quot;yyyy&quot;,&quot;currency&quot;:{&quot;position&quot;:&quot;pre&quot;,&quot;symbol&quot;:&quot;&quot;},&quot;decimals&quot;:&quot;auto&quot;,&quot;level&quot;:&quot;DATETIME&quot;,&quot;percentage&quot;:false,&quot;separated&quot;:false},&quot;lost&quot;:false,&quot;name&quot;:&quot;滞留人数&quot;,&quot;sourceIndex&quot;:0,&quot;sourceName&quot;:&quot;滞留人数&quot;,&quot;typeOK&quot;:true,&quot;sort&quot;:{&quot;order&quot;:&quot;desc&quot;,&quot;priority&quot;:0},&quot;title&quot;:&quot;求和 滞留人数&quot;,&quot;derivation&quot;:&quot;sum&quot;}],&quot;limit&quot;:{&quot;offset&quot;:0,&quot;count&quot;:1001},&quot;kpiSelections&quot;:[{&quot;categroyQuality&quot;:0,&quot;columnName&quot;:&quot;c875048305&quot;,&quot;columnType&quot;:&quot;INTEGER&quot;,&quot;columnWidth&quot;:255,&quot;dataQuality&quot;:0,&quot;dataType&quot;:&quot;INTEGER&quot;,&quot;dbTableName&quot;:&quot;ra2a1f29884b84fb8b5416cc9db49c1ac&quot;,&quot;format&quot;:{&quot;DATETIME&quot;:&quot;yyyy/MM/dd hh:mm:ss&quot;,&quot;DAY&quot;:&quot;yyyy/MM/dd&quot;,&quot;DURATION&quot;:&quot;hh:mm&apos;ss\&quot;SSS&quot;,&quot;MONTH&quot;:&quot;yyyy/MM&quot;,&quot;QUARTER&quot;:&quot;yyyy Q&quot;,&quot;TIME&quot;:&quot;hh:mm:ss&quot;,&quot;YEAR&quot;:&quot;yyyy&quot;,&quot;currency&quot;:{&quot;position&quot;:&quot;pre&quot;,&quot;symbol&quot;:&quot;&quot;},&quot;decimals&quot;:&quot;auto&quot;,&quot;level&quot;:&quot;DATETIME&quot;,&quot;percentage&quot;:false,&quot;separated&quot;:false},&quot;lost&quot;:false,&quot;name&quot;:&quot;滞留人数&quot;,&quot;sourceIndex&quot;:0,&quot;sourceName&quot;:&quot;滞留人数&quot;,&quot;typeOK&quot;:true,&quot;sort&quot;:{&quot;order&quot;:&quot;desc&quot;,&quot;priority&quot;:0},&quot;title&quot;:&quot;求和 滞留人数&quot;,&quot;derivation&quot;:&quot;sum&quot;,&quot;kpiDerivation&quot;:&quot;sum&quot;}]}]}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">verify.shujuguan.cn</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+            <stringProp name="HTTPSampler.path">/api/workcharts</stringProp>
+            <stringProp name="HTTPSampler.method">PUT</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://verify.shujuguan.cn/</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:53.0) Gecko/20100101 Firefox/53.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
