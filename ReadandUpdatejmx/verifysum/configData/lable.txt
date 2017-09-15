@@ -1,0 +1,18 @@
+23 /api/datatables
+24 /api/workbooks
+25 /api/workcharts/brief
+api/yuntuapp/fingerprint?_=${__time(,)} 
+35 /api/user
+36 /api/languagepack
+37 /api/dataflows
+38 /api/category
+39 /api/dataconnectors
+40 /api/organization/info
+44 /api/im/imtoken/preference
+api/yuntuapp/yuntu-appcss?_=${__time(,)} 
+api/yuntuapp/yuntu-resources?_=${__time(,)} 
+feapp/s45f_170505_b/yuntu-resources.yaz?_=${__time(,)} 
+feapp/s45f_170505_b/yuntu-appcss.yaz?_=${__time(,)} 
+46 /api/message/system
+47 /api/token/im
+61 /api/im/msg/history

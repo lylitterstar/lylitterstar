@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="3.1" jmeter="3.1 r1770033">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="host" elementType="Argument">
+            <stringProp name="Argument.name">host</stringProp>
+            <stringProp name="Argument.value">shujuguan.shujuguan.cn</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="port" elementType="Argument">
+            <stringProp name="Argument.name">port</stringProp>
+            <stringProp name="Argument.value">443</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="encoding" elementType="Argument">
+            <stringProp name="Argument.name">encoding</stringProp>
+            <stringProp name="Argument.value">utf-8</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="PHPSESSID" elementType="Argument">
+            <stringProp name="Argument.name">PHPSESSID</stringProp>
+            <stringProp name="Argument.value">h8ggifbugtcjbhj1rniraan0f7</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="upload_file" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1491550069000</longProp>
+        <longProp name="ThreadGroup.end_time">1491550069000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${host}</stringProp>
+          <stringProp name="HTTPSampler.port">${port}</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">${encoding}</stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+        </ConfigTestElement>
+        <hashTree/>
+        <OnceOnlyController guiclass="OnceOnlyControllerGui" testclass="OnceOnlyController" testname="Once Only Controller" enabled="true"/>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/enterprise/shujuguan/signin" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="subdomain" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">shujuguan</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">subdomain</stringProp>
+                </elementProp>
+                <elementProp name="username" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">dushanshan@gbase.cn</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">username</stringProp>
+                </elementProp>
+                <elementProp name="password" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">111111</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">password</stringProp>
+                </elementProp>
+                <elementProp name="remember" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">0</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">remember</stringProp>
+                </elementProp>
+                <elementProp name="hash" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">hash</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/enterprise/shujuguan/signin</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+        </hashTree>
+        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+          <collectionProp name="CookieManager.cookies"/>
+          <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+          <stringProp name="CookieManager.policy">standard</stringProp>
+          <stringProp name="CookieManager.implementation">org.apache.jmeter.protocol.http.control.HC4CookieHandler</stringProp>
+        </CookieManager>
+        <hashTree/>
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">true</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </LoopController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="api/dbconnection/xc5c3d8f75ea740ca90ecae1332ed4bb5/createdatatable" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">api/dbconnection/xc5c3d8f75ea740ca90ecae1332ed4bb5/createdatatable</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-2146436846">accesses</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">datatableId</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;id&quot;:&quot;(.+?)&quot;</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">NA</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="api/datatables/${datatableId}" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">api/datatables/${datatableId}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+              <boolProp name="ResultCollector.error_logging">false</boolProp>
+              <objProp>
+                <name>saveConfig</name>
+                <value class="SampleSaveConfiguration">
+                  <time>true</time>
+                  <latency>true</latency>
+                  <timestamp>true</timestamp>
+                  <success>true</success>
+                  <label>true</label>
+                  <code>true</code>
+                  <message>true</message>
+                  <threadName>true</threadName>
+                  <dataType>true</dataType>
+                  <encoding>false</encoding>
+                  <assertions>true</assertions>
+                  <subresults>true</subresults>
+                  <responseData>false</responseData>
+                  <samplerData>false</samplerData>
+                  <xml>false</xml>
+                  <fieldNames>true</fieldNames>
+                  <responseHeaders>false</responseHeaders>
+                  <requestHeaders>false</requestHeaders>
+                  <responseDataOnError>false</responseDataOnError>
+                  <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                  <assertionsResultsToSave>0</assertionsResultsToSave>
+                  <bytes>true</bytes>
+                  <sentBytes>true</sentBytes>
+                  <threadCounts>true</threadCounts>
+                  <idleTime>true</idleTime>
+                  <connectTime>true</connectTime>
+                </value>
+              </objProp>
+              <stringProp name="filename"></stringProp>
+            </ResultCollector>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="api/dbconnection/connect/${datatableId}" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">api/dbconnection/connect/${datatableId}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="api/dataconnectors/${datatableId}/updateconfig" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;append&quot;:false,&quot;dbDataSourceId&quot;:&quot;xc5c3d8f75ea740ca90ecae1332ed4bb5&quot;,&quot;relTableAuths&quot;:{},&quot;sourceType&quot;:&quot;DB_CONNECTION&quot;,&quot;storageSize&quot;:-1,&quot;titleRow&quot;:-1,&quot;updateData&quot;:false,&quot;updateType&quot;:0,&quot;uploadDate&quot;:1493277716373,&quot;rootNode&quot;:{&quot;columns&quot;:[{&quot;categroyQuality&quot;:0,&quot;columnName&quot;:&quot;chart_id&quot;,&quot;columnType&quot;:&quot;TEXT&quot;,&quot;columnWidth&quot;:100,&quot;dataQuality&quot;:1,&quot;dataType&quot;:&quot;STRING&quot;,&quot;dbTableName&quot;:&quot;qiye_user_chart_info&quot;,&quot;format&quot;:{&quot;DATETIME&quot;:&quot;yyyy/MM/dd hh:mm:ss&quot;,&quot;DAY&quot;:&quot;yyyy/MM/dd&quot;,&quot;DURATION&quot;:&quot;hh:mm&apos;ss\&quot;SSS&quot;,&quot;MONTH&quot;:&quot;yyyy/MM&quot;,&quot;QUARTER&quot;:&quot;yyyy Q&quot;,&quot;TIME&quot;:&quot;hh:mm:ss&quot;,&quot;YEAR&quot;:&quot;yyyy&quot;,&quot;currency&quot;:{&quot;position&quot;:&quot;pre&quot;,&quot;symbol&quot;:&quot;&quot;},&quot;decimals&quot;:&quot;auto&quot;,&quot;level&quot;:&quot;DATETIME&quot;,&quot;percentage&quot;:false,&quot;separated&quot;:false},&quot;lost&quot;:false,&quot;name&quot;:&quot;chart_id&quot;,&quot;oriColumnType&quot;:&quot;TEXT&quot;,&quot;sourceColumnType&quot;:&quot;STRING&quot;,&quot;sourceIndex&quot;:0,&quot;sourceName&quot;:&quot;chart_id&quot;,&quot;typeOK&quot;:true},{&quot;categroyQuality&quot;:0,&quot;columnName&quot;:&quot;chart_name&quot;,&quot;columnType&quot;:&quot;TEXT&quot;,&quot;columnWidth&quot;:100,&quot;dataQuality&quot;:1,&quot;dataType&quot;:&quot;STRING&quot;,&quot;dbTableName&quot;:&quot;qiye_user_chart_info&quot;,&quot;format&quot;:{&quot;DATETIME&quot;:&quot;yyyy/MM/dd hh:mm:ss&quot;,&quot;DAY&quot;:&quot;yyyy/MM/dd&quot;,&quot;DURATION&quot;:&quot;hh:mm&apos;ss\&quot;SSS&quot;,&quot;MONTH&quot;:&quot;yyyy/MM&quot;,&quot;QUARTER&quot;:&quot;yyyy Q&quot;,&quot;TIME&quot;:&quot;hh:mm:ss&quot;,&quot;YEAR&quot;:&quot;yyyy&quot;,&quot;currency&quot;:{&quot;position&quot;:&quot;pre&quot;,&quot;symbol&quot;:&quot;&quot;},&quot;decimals&quot;:&quot;auto&quot;,&quot;level&quot;:&quot;DATETIME&quot;,&quot;percentage&quot;:false,&quot;separated&quot;:false},&quot;lost&quot;:false,&quot;name&quot;:&quot;chart_name&quot;,&quot;oriColumnType&quot;:&quot;TEXT&quot;,&quot;sourceColumnType&quot;:&quot;STRING&quot;,&quot;sourceIndex&quot;:0,&quot;sourceName&quot;:&quot;chart_name&quot;,&quot;typeOK&quot;:true},{&quot;categroyQuality&quot;:0,&quot;columnName&quot;:&quot;user_id&quot;,&quot;columnType&quot;:&quot;TEXT&quot;,&quot;columnWidth&quot;:11,&quot;dataQuality&quot;:1,&quot;dataType&quot;:&quot;STRING&quot;,&quot;dbTableName&quot;:&quot;qiye_user_chart_info&quot;,&quot;format&quot;:{&quot;DATETIME&quot;:&quot;yyyy/MM/dd hh:mm:ss&quot;,&quot;DAY&quot;:&quot;yyyy/MM/dd&quot;,&quot;DURATION&quot;:&quot;hh:mm&apos;ss\&quot;SSS&quot;,&quot;MONTH&quot;:&quot;yyyy/MM&quot;,&quot;QUARTER&quot;:&quot;yyyy Q&quot;,&quot;TIME&quot;:&quot;hh:mm:ss&quot;,&quot;YEAR&quot;:&quot;yyyy&quot;,&quot;currency&quot;:{&quot;position&quot;:&quot;pre&quot;,&quot;symbol&quot;:&quot;&quot;},&quot;decimals&quot;:&quot;auto&quot;,&quot;level&quot;:&quot;DATETIME&quot;,&quot;percentage&quot;:false,&quot;separated&quot;:false},&quot;lost&quot;:false,&quot;name&quot;:&quot;user_id&quot;,&quot;oriColumnType&quot;:&quot;TEXT&quot;,&quot;sourceColumnType&quot;:&quot;STRING&quot;,&quot;sourceIndex&quot;:0,&quot;sourceName&quot;:&quot;user_id&quot;,&quot;typeOK&quot;:true},{&quot;categroyQuality&quot;:0,&quot;columnName&quot;:&quot;user_name&quot;,&quot;columnType&quot;:&quot;TEXT&quot;,&quot;columnWidth&quot;:50,&quot;dataQuality&quot;:1,&quot;dataType&quot;:&quot;STRING&quot;,&quot;dbTableName&quot;:&quot;qiye_user_chart_info&quot;,&quot;format&quot;:{&quot;DATETIME&quot;:&quot;yyyy/MM/dd hh:mm:ss&quot;,&quot;DAY&quot;:&quot;yyyy/MM/dd&quot;,&quot;DURATION&quot;:&quot;hh:mm&apos;ss\&quot;SSS&quot;,&quot;MONTH&quot;:&quot;yyyy/MM&quot;,&quot;QUARTER&quot;:&quot;yyyy Q&quot;,&quot;TIME&quot;:&quot;hh:mm:ss&quot;,&quot;YEAR&quot;:&quot;yyyy&quot;,&quot;currency&quot;:{&quot;position&quot;:&quot;pre&quot;,&quot;symbol&quot;:&quot;&quot;},&quot;decimals&quot;:&quot;auto&quot;,&quot;level&quot;:&quot;DATETIME&quot;,&quot;percentage&quot;:false,&quot;separated&quot;:false},&quot;lost&quot;:false,&quot;name&quot;:&quot;user_name&quot;,&quot;oriColumnType&quot;:&quot;TEXT&quot;,&quot;sourceColumnType&quot;:&quot;STRING&quot;,&quot;sourceIndex&quot;:0,&quot;sourceName&quot;:&quot;user_name&quot;,&quot;typeOK&quot;:true},{&quot;categroyQuality&quot;:0,&quot;columnName&quot;:&quot;chart_type&quot;,&quot;columnType&quot;:&quot;TEXT&quot;,&quot;columnWidth&quot;:20,&quot;dataQuality&quot;:1,&quot;dataType&quot;:&quot;STRING&quot;,&quot;dbTableName&quot;:&quot;qiye_user_chart_info&quot;,&quot;format&quot;:{&quot;DATETIME&quot;:&quot;yyyy/MM/dd hh:mm:ss&quot;,&quot;DAY&quot;:&quot;yyyy/MM/dd&quot;,&quot;DURATION&quot;:&quot;hh:mm&apos;ss\&quot;SSS&quot;,&quot;MONTH&quot;:&quot;yyyy/MM&quot;,&quot;QUARTER&quot;:&quot;yyyy Q&quot;,&quot;TIME&quot;:&quot;hh:mm:ss&quot;,&quot;YEAR&quot;:&quot;yyyy&quot;,&quot;currency&quot;:{&quot;position&quot;:&quot;pre&quot;,&quot;symbol&quot;:&quot;&quot;},&quot;decimals&quot;:&quot;auto&quot;,&quot;level&quot;:&quot;DATETIME&quot;,&quot;percentage&quot;:false,&quot;separated&quot;:false},&quot;lost&quot;:false,&quot;name&quot;:&quot;chart_type&quot;,&quot;oriColumnType&quot;:&quot;TEXT&quot;,&quot;sourceColumnType&quot;:&quot;STRING&quot;,&quot;sourceIndex&quot;:0,&quot;sourceName&quot;:&quot;chart_type&quot;,&quot;typeOK&quot;:true},{&quot;categroyQuality&quot;:0,&quot;columnName&quot;:&quot;is_share&quot;,&quot;columnType&quot;:&quot;TEXT&quot;,&quot;columnWidth&quot;:20,&quot;dataQuality&quot;:1,&quot;dataType&quot;:&quot;STRING&quot;,&quot;dbTableName&quot;:&quot;qiye_user_chart_info&quot;,&quot;format&quot;:{&quot;DATETIME&quot;:&quot;yyyy/MM/dd hh:mm:ss&quot;,&quot;DAY&quot;:&quot;yyyy/MM/dd&quot;,&quot;DURATION&quot;:&quot;hh:mm&apos;ss\&quot;SSS&quot;,&quot;MONTH&quot;:&quot;yyyy/MM&quot;,&quot;QUARTER&quot;:&quot;yyyy Q&quot;,&quot;TIME&quot;:&quot;hh:mm:ss&quot;,&quot;YEAR&quot;:&quot;yyyy&quot;,&quot;currency&quot;:{&quot;position&quot;:&quot;pre&quot;,&quot;symbol&quot;:&quot;&quot;},&quot;decimals&quot;:&quot;auto&quot;,&quot;level&quot;:&quot;DATETIME&quot;,&quot;percentage&quot;:false,&quot;separated&quot;:false},&quot;lost&quot;:false,&quot;name&quot;:&quot;is_share&quot;,&quot;oriColumnType&quot;:&quot;TEXT&quot;,&quot;sourceColumnType&quot;:&quot;STRING&quot;,&quot;sourceIndex&quot;:0,&quot;sourceName&quot;:&quot;is_share&quot;,&quot;typeOK&quot;:true},{&quot;categroyQuality&quot;:0,&quot;columnName&quot;:&quot;shareType&quot;,&quot;columnType&quot;:&quot;TEXT&quot;,&quot;columnWidth&quot;:20,&quot;dataQuality&quot;:1,&quot;dataType&quot;:&quot;STRING&quot;,&quot;dbTableName&quot;:&quot;qiye_user_chart_info&quot;,&quot;format&quot;:{&quot;DATETIME&quot;:&quot;yyyy/MM/dd hh:mm:ss&quot;,&quot;DAY&quot;:&quot;yyyy/MM/dd&quot;,&quot;DURATION&quot;:&quot;hh:mm&apos;ss\&quot;SSS&quot;,&quot;MONTH&quot;:&quot;yyyy/MM&quot;,&quot;QUARTER&quot;:&quot;yyyy Q&quot;,&quot;TIME&quot;:&quot;hh:mm:ss&quot;,&quot;YEAR&quot;:&quot;yyyy&quot;,&quot;currency&quot;:{&quot;position&quot;:&quot;pre&quot;,&quot;symbol&quot;:&quot;&quot;},&quot;decimals&quot;:&quot;auto&quot;,&quot;level&quot;:&quot;DATETIME&quot;,&quot;percentage&quot;:false,&quot;separated&quot;:false},&quot;lost&quot;:false,&quot;name&quot;:&quot;shareType&quot;,&quot;oriColumnType&quot;:&quot;TEXT&quot;,&quot;sourceColumnType&quot;:&quot;STRING&quot;,&quot;sourceIndex&quot;:0,&quot;sourceName&quot;:&quot;shareType&quot;,&quot;typeOK&quot;:true},{&quot;categroyQuality&quot;:0,&quot;columnName&quot;:&quot;deleted&quot;,&quot;columnType&quot;:&quot;TEXT&quot;,&quot;columnWidth&quot;:20,&quot;dataQuality&quot;:1,&quot;dataType&quot;:&quot;STRING&quot;,&quot;dbTableName&quot;:&quot;qiye_user_chart_info&quot;,&quot;format&quot;:{&quot;DATETIME&quot;:&quot;yyyy/MM/dd hh:mm:ss&quot;,&quot;DAY&quot;:&quot;yyyy/MM/dd&quot;,&quot;DURATION&quot;:&quot;hh:mm&apos;ss\&quot;SSS&quot;,&quot;MONTH&quot;:&quot;yyyy/MM&quot;,&quot;QUARTER&quot;:&quot;yyyy Q&quot;,&quot;TIME&quot;:&quot;hh:mm:ss&quot;,&quot;YEAR&quot;:&quot;yyyy&quot;,&quot;currency&quot;:{&quot;position&quot;:&quot;pre&quot;,&quot;symbol&quot;:&quot;&quot;},&quot;decimals&quot;:&quot;auto&quot;,&quot;level&quot;:&quot;DATETIME&quot;,&quot;percentage&quot;:false,&quot;separated&quot;:false},&quot;lost&quot;:false,&quot;name&quot;:&quot;deleted&quot;,&quot;oriColumnType&quot;:&quot;TEXT&quot;,&quot;sourceColumnType&quot;:&quot;STRING&quot;,&quot;sourceIndex&quot;:0,&quot;sourceName&quot;:&quot;deleted&quot;,&quot;typeOK&quot;:true},{&quot;categroyQuality&quot;:0,&quot;columnName&quot;:&quot;chartLabel&quot;,&quot;columnType&quot;:&quot;TEXT&quot;,&quot;columnWidth&quot;:10,&quot;dataQuality&quot;:1,&quot;dataType&quot;:&quot;STRING&quot;,&quot;dbTableName&quot;:&quot;qiye_user_chart_info&quot;,&quot;format&quot;:{&quot;DATETIME&quot;:&quot;yyyy/MM/dd hh:mm:ss&quot;,&quot;DAY&quot;:&quot;yyyy/MM/dd&quot;,&quot;DURATION&quot;:&quot;hh:mm&apos;ss\&quot;SSS&quot;,&quot;MONTH&quot;:&quot;yyyy/MM&quot;,&quot;QUARTER&quot;:&quot;yyyy Q&quot;,&quot;TIME&quot;:&quot;hh:mm:ss&quot;,&quot;YEAR&quot;:&quot;yyyy&quot;,&quot;currency&quot;:{&quot;position&quot;:&quot;pre&quot;,&quot;symbol&quot;:&quot;&quot;},&quot;decimals&quot;:&quot;auto&quot;,&quot;level&quot;:&quot;DATETIME&quot;,&quot;percentage&quot;:false,&quot;separated&quot;:false},&quot;lost&quot;:false,&quot;name&quot;:&quot;chartLabel&quot;,&quot;oriColumnType&quot;:&quot;TEXT&quot;,&quot;sourceColumnType&quot;:&quot;STRING&quot;,&quot;sourceIndex&quot;:0,&quot;sourceName&quot;:&quot;chartLabel&quot;,&quot;typeOK&quot;:true},{&quot;categroyQuality&quot;:0,&quot;columnName&quot;:&quot;create_date&quot;,&quot;columnType&quot;:&quot;DATETIME&quot;,&quot;columnWidth&quot;:19,&quot;dataQuality&quot;:1,&quot;dataType&quot;:&quot;DATE&quot;,&quot;dbTableName&quot;:&quot;qiye_user_chart_info&quot;,&quot;format&quot;:{&quot;DATETIME&quot;:&quot;yyyy/MM/dd hh:mm:ss&quot;,&quot;DAY&quot;:&quot;yyyy/MM/dd&quot;,&quot;DURATION&quot;:&quot;hh:mm&apos;ss\&quot;SSS&quot;,&quot;MONTH&quot;:&quot;yyyy/MM&quot;,&quot;QUARTER&quot;:&quot;yyyy Q&quot;,&quot;TIME&quot;:&quot;hh:mm:ss&quot;,&quot;YEAR&quot;:&quot;yyyy&quot;,&quot;currency&quot;:{&quot;position&quot;:&quot;pre&quot;,&quot;symbol&quot;:&quot;&quot;},&quot;decimals&quot;:&quot;auto&quot;,&quot;level&quot;:&quot;DATETIME&quot;,&quot;percentage&quot;:false,&quot;separated&quot;:false},&quot;lost&quot;:false,&quot;name&quot;:&quot;create_date&quot;,&quot;oriColumnType&quot;:&quot;DATETIME&quot;,&quot;sourceColumnType&quot;:&quot;DATE&quot;,&quot;sourceIndex&quot;:0,&quot;sourceName&quot;:&quot;create_date&quot;,&quot;typeOK&quot;:true},{&quot;categroyQuality&quot;:0,&quot;columnName&quot;:&quot;update_date&quot;,&quot;columnType&quot;:&quot;DATETIME&quot;,&quot;columnWidth&quot;:19,&quot;dataQuality&quot;:1,&quot;dataType&quot;:&quot;DATE&quot;,&quot;dbTableName&quot;:&quot;qiye_user_chart_info&quot;,&quot;format&quot;:{&quot;DATETIME&quot;:&quot;yyyy/MM/dd hh:mm:ss&quot;,&quot;DAY&quot;:&quot;yyyy/MM/dd&quot;,&quot;DURATION&quot;:&quot;hh:mm&apos;ss\&quot;SSS&quot;,&quot;MONTH&quot;:&quot;yyyy/MM&quot;,&quot;QUARTER&quot;:&quot;yyyy Q&quot;,&quot;TIME&quot;:&quot;hh:mm:ss&quot;,&quot;YEAR&quot;:&quot;yyyy&quot;,&quot;currency&quot;:{&quot;position&quot;:&quot;pre&quot;,&quot;symbol&quot;:&quot;&quot;},&quot;decimals&quot;:&quot;auto&quot;,&quot;level&quot;:&quot;DATETIME&quot;,&quot;percentage&quot;:false,&quot;separated&quot;:false},&quot;lost&quot;:false,&quot;name&quot;:&quot;update_date&quot;,&quot;oriColumnType&quot;:&quot;DATETIME&quot;,&quot;sourceColumnType&quot;:&quot;DATE&quot;,&quot;sourceIndex&quot;:0,&quot;sourceName&quot;:&quot;update_date&quot;,&quot;typeOK&quot;:true}],&quot;columnRelations&quot;:[],&quot;joinType&quot;:&quot;inner&quot;,&quot;newNode&quot;:true,&quot;tableName&quot;:&quot;qiye_user_chart_info&quot;,&quot;tableAlias&quot;:&quot;qiye_user_chart_info&quot;,&quot;childrens&quot;:[]}}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">api/dataconnectors/${datatableId}/updateconfig</stringProp>
+            <stringProp name="HTTPSampler.method">PATCH</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="api/dataconnectors/${datatableId}/updateconfig/preview" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;append&quot;:false,&quot;columnNames&quot;:[&quot;chart_name&quot;,&quot;chart_id&quot;,&quot;is_share&quot;,&quot;deleted&quot;,&quot;chart_type&quot;,&quot;user_id&quot;,&quot;user_name&quot;,&quot;chartLabel&quot;,&quot;create_date&quot;,&quot;shareType&quot;,&quot;update_date&quot;],&quot;dbDataSourceId&quot;:&quot;xc5c3d8f75ea740ca90ecae1332ed4bb5&quot;,&quot;relTableAuths&quot;:{},&quot;relationTableIds&quot;:[&quot;qiye_user_chart_info&quot;],&quot;rootNode&quot;:{&quot;childrens&quot;:[],&quot;columnRelations&quot;:[],&quot;columns&quot;:[{&quot;categroyQuality&quot;:0,&quot;columnName&quot;:&quot;chart_id&quot;,&quot;columnType&quot;:&quot;TEXT&quot;,&quot;columnWidth&quot;:100,&quot;dataQuality&quot;:1,&quot;dataType&quot;:&quot;STRING&quot;,&quot;dbTableName&quot;:&quot;qiye_user_chart_info&quot;,&quot;format&quot;:{&quot;DATETIME&quot;:&quot;yyyy/MM/dd hh:mm:ss&quot;,&quot;DAY&quot;:&quot;yyyy/MM/dd&quot;,&quot;DURATION&quot;:&quot;hh:mm&apos;ss\&quot;SSS&quot;,&quot;MONTH&quot;:&quot;yyyy/MM&quot;,&quot;QUARTER&quot;:&quot;yyyy Q&quot;,&quot;TIME&quot;:&quot;hh:mm:ss&quot;,&quot;YEAR&quot;:&quot;yyyy&quot;,&quot;currency&quot;:{&quot;position&quot;:&quot;pre&quot;,&quot;symbol&quot;:&quot;&quot;},&quot;decimals&quot;:&quot;auto&quot;,&quot;level&quot;:&quot;DATETIME&quot;,&quot;percentage&quot;:false,&quot;separated&quot;:false},&quot;hidden&quot;:false,&quot;lost&quot;:false,&quot;name&quot;:&quot;chart_id&quot;,&quot;oriColumnType&quot;:&quot;TEXT&quot;,&quot;sourceColumnType&quot;:&quot;STRING&quot;,&quot;sourceIndex&quot;:0,&quot;sourceName&quot;:&quot;chart_id&quot;,&quot;typeOK&quot;:true},{&quot;categroyQuality&quot;:0,&quot;columnName&quot;:&quot;chart_name&quot;,&quot;columnType&quot;:&quot;TEXT&quot;,&quot;columnWidth&quot;:100,&quot;dataQuality&quot;:1,&quot;dataType&quot;:&quot;STRING&quot;,&quot;dbTableName&quot;:&quot;qiye_user_chart_info&quot;,&quot;format&quot;:{&quot;DATETIME&quot;:&quot;yyyy/MM/dd hh:mm:ss&quot;,&quot;DAY&quot;:&quot;yyyy/MM/dd&quot;,&quot;DURATION&quot;:&quot;hh:mm&apos;ss\&quot;SSS&quot;,&quot;MONTH&quot;:&quot;yyyy/MM&quot;,&quot;QUARTER&quot;:&quot;yyyy Q&quot;,&quot;TIME&quot;:&quot;hh:mm:ss&quot;,&quot;YEAR&quot;:&quot;yyyy&quot;,&quot;currency&quot;:{&quot;position&quot;:&quot;pre&quot;,&quot;symbol&quot;:&quot;&quot;},&quot;decimals&quot;:&quot;auto&quot;,&quot;level&quot;:&quot;DATETIME&quot;,&quot;percentage&quot;:false,&quot;separated&quot;:false},&quot;hidden&quot;:false,&quot;lost&quot;:false,&quot;name&quot;:&quot;chart_name&quot;,&quot;oriColumnType&quot;:&quot;TEXT&quot;,&quot;sourceColumnType&quot;:&quot;STRING&quot;,&quot;sourceIndex&quot;:0,&quot;sourceName&quot;:&quot;chart_name&quot;,&quot;typeOK&quot;:true},{&quot;categroyQuality&quot;:0,&quot;columnName&quot;:&quot;user_id&quot;,&quot;columnType&quot;:&quot;TEXT&quot;,&quot;columnWidth&quot;:11,&quot;dataQuality&quot;:1,&quot;dataType&quot;:&quot;STRING&quot;,&quot;dbTableName&quot;:&quot;qiye_user_chart_info&quot;,&quot;format&quot;:{&quot;DATETIME&quot;:&quot;yyyy/MM/dd hh:mm:ss&quot;,&quot;DAY&quot;:&quot;yyyy/MM/dd&quot;,&quot;DURATION&quot;:&quot;hh:mm&apos;ss\&quot;SSS&quot;,&quot;MONTH&quot;:&quot;yyyy/MM&quot;,&quot;QUARTER&quot;:&quot;yyyy Q&quot;,&quot;TIME&quot;:&quot;hh:mm:ss&quot;,&quot;YEAR&quot;:&quot;yyyy&quot;,&quot;currency&quot;:{&quot;position&quot;:&quot;pre&quot;,&quot;symbol&quot;:&quot;&quot;},&quot;decimals&quot;:&quot;auto&quot;,&quot;level&quot;:&quot;DATETIME&quot;,&quot;percentage&quot;:false,&quot;separated&quot;:false},&quot;hidden&quot;:false,&quot;lost&quot;:false,&quot;name&quot;:&quot;user_id&quot;,&quot;oriColumnType&quot;:&quot;TEXT&quot;,&quot;sourceColumnType&quot;:&quot;STRING&quot;,&quot;sourceIndex&quot;:0,&quot;sourceName&quot;:&quot;user_id&quot;,&quot;typeOK&quot;:true},{&quot;categroyQuality&quot;:0,&quot;columnName&quot;:&quot;user_name&quot;,&quot;columnType&quot;:&quot;TEXT&quot;,&quot;columnWidth&quot;:50,&quot;dataQuality&quot;:1,&quot;dataType&quot;:&quot;STRING&quot;,&quot;dbTableName&quot;:&quot;qiye_user_chart_info&quot;,&quot;format&quot;:{&quot;DATETIME&quot;:&quot;yyyy/MM/dd hh:mm:ss&quot;,&quot;DAY&quot;:&quot;yyyy/MM/dd&quot;,&quot;DURATION&quot;:&quot;hh:mm&apos;ss\&quot;SSS&quot;,&quot;MONTH&quot;:&quot;yyyy/MM&quot;,&quot;QUARTER&quot;:&quot;yyyy Q&quot;,&quot;TIME&quot;:&quot;hh:mm:ss&quot;,&quot;YEAR&quot;:&quot;yyyy&quot;,&quot;currency&quot;:{&quot;position&quot;:&quot;pre&quot;,&quot;symbol&quot;:&quot;&quot;},&quot;decimals&quot;:&quot;auto&quot;,&quot;level&quot;:&quot;DATETIME&quot;,&quot;percentage&quot;:false,&quot;separated&quot;:false},&quot;hidden&quot;:false,&quot;lost&quot;:false,&quot;name&quot;:&quot;user_name&quot;,&quot;oriColumnType&quot;:&quot;TEXT&quot;,&quot;sourceColumnType&quot;:&quot;STRING&quot;,&quot;sourceIndex&quot;:0,&quot;sourceName&quot;:&quot;user_name&quot;,&quot;typeOK&quot;:true},{&quot;categroyQuality&quot;:0,&quot;columnName&quot;:&quot;chart_type&quot;,&quot;columnType&quot;:&quot;TEXT&quot;,&quot;columnWidth&quot;:20,&quot;dataQuality&quot;:1,&quot;dataType&quot;:&quot;STRING&quot;,&quot;dbTableName&quot;:&quot;qiye_user_chart_info&quot;,&quot;format&quot;:{&quot;DATETIME&quot;:&quot;yyyy/MM/dd hh:mm:ss&quot;,&quot;DAY&quot;:&quot;yyyy/MM/dd&quot;,&quot;DURATION&quot;:&quot;hh:mm&apos;ss\&quot;SSS&quot;,&quot;MONTH&quot;:&quot;yyyy/MM&quot;,&quot;QUARTER&quot;:&quot;yyyy Q&quot;,&quot;TIME&quot;:&quot;hh:mm:ss&quot;,&quot;YEAR&quot;:&quot;yyyy&quot;,&quot;currency&quot;:{&quot;position&quot;:&quot;pre&quot;,&quot;symbol&quot;:&quot;&quot;},&quot;decimals&quot;:&quot;auto&quot;,&quot;level&quot;:&quot;DATETIME&quot;,&quot;percentage&quot;:false,&quot;separated&quot;:false},&quot;hidden&quot;:false,&quot;lost&quot;:false,&quot;name&quot;:&quot;chart_type&quot;,&quot;oriColumnType&quot;:&quot;TEXT&quot;,&quot;sourceColumnType&quot;:&quot;STRING&quot;,&quot;sourceIndex&quot;:0,&quot;sourceName&quot;:&quot;chart_type&quot;,&quot;typeOK&quot;:true},{&quot;categroyQuality&quot;:0,&quot;columnName&quot;:&quot;is_share&quot;,&quot;columnType&quot;:&quot;TEXT&quot;,&quot;columnWidth&quot;:20,&quot;dataQuality&quot;:1,&quot;dataType&quot;:&quot;STRING&quot;,&quot;dbTableName&quot;:&quot;qiye_user_chart_info&quot;,&quot;format&quot;:{&quot;DATETIME&quot;:&quot;yyyy/MM/dd hh:mm:ss&quot;,&quot;DAY&quot;:&quot;yyyy/MM/dd&quot;,&quot;DURATION&quot;:&quot;hh:mm&apos;ss\&quot;SSS&quot;,&quot;MONTH&quot;:&quot;yyyy/MM&quot;,&quot;QUARTER&quot;:&quot;yyyy Q&quot;,&quot;TIME&quot;:&quot;hh:mm:ss&quot;,&quot;YEAR&quot;:&quot;yyyy&quot;,&quot;currency&quot;:{&quot;position&quot;:&quot;pre&quot;,&quot;symbol&quot;:&quot;&quot;},&quot;decimals&quot;:&quot;auto&quot;,&quot;level&quot;:&quot;DATETIME&quot;,&quot;percentage&quot;:false,&quot;separated&quot;:false},&quot;hidden&quot;:false,&quot;lost&quot;:false,&quot;name&quot;:&quot;is_share&quot;,&quot;oriColumnType&quot;:&quot;TEXT&quot;,&quot;sourceColumnType&quot;:&quot;STRING&quot;,&quot;sourceIndex&quot;:0,&quot;sourceName&quot;:&quot;is_share&quot;,&quot;typeOK&quot;:true},{&quot;categroyQuality&quot;:0,&quot;columnName&quot;:&quot;shareType&quot;,&quot;columnType&quot;:&quot;TEXT&quot;,&quot;columnWidth&quot;:20,&quot;dataQuality&quot;:1,&quot;dataType&quot;:&quot;STRING&quot;,&quot;dbTableName&quot;:&quot;qiye_user_chart_info&quot;,&quot;format&quot;:{&quot;DATETIME&quot;:&quot;yyyy/MM/dd hh:mm:ss&quot;,&quot;DAY&quot;:&quot;yyyy/MM/dd&quot;,&quot;DURATION&quot;:&quot;hh:mm&apos;ss\&quot;SSS&quot;,&quot;MONTH&quot;:&quot;yyyy/MM&quot;,&quot;QUARTER&quot;:&quot;yyyy Q&quot;,&quot;TIME&quot;:&quot;hh:mm:ss&quot;,&quot;YEAR&quot;:&quot;yyyy&quot;,&quot;currency&quot;:{&quot;position&quot;:&quot;pre&quot;,&quot;symbol&quot;:&quot;&quot;},&quot;decimals&quot;:&quot;auto&quot;,&quot;level&quot;:&quot;DATETIME&quot;,&quot;percentage&quot;:false,&quot;separated&quot;:false},&quot;hidden&quot;:false,&quot;lost&quot;:false,&quot;name&quot;:&quot;shareType&quot;,&quot;oriColumnType&quot;:&quot;TEXT&quot;,&quot;sourceColumnType&quot;:&quot;STRING&quot;,&quot;sourceIndex&quot;:0,&quot;sourceName&quot;:&quot;shareType&quot;,&quot;typeOK&quot;:true},{&quot;categroyQuality&quot;:0,&quot;columnName&quot;:&quot;deleted&quot;,&quot;columnType&quot;:&quot;TEXT&quot;,&quot;columnWidth&quot;:20,&quot;dataQuality&quot;:1,&quot;dataType&quot;:&quot;STRING&quot;,&quot;dbTableName&quot;:&quot;qiye_user_chart_info&quot;,&quot;format&quot;:{&quot;DATETIME&quot;:&quot;yyyy/MM/dd hh:mm:ss&quot;,&quot;DAY&quot;:&quot;yyyy/MM/dd&quot;,&quot;DURATION&quot;:&quot;hh:mm&apos;ss\&quot;SSS&quot;,&quot;MONTH&quot;:&quot;yyyy/MM&quot;,&quot;QUARTER&quot;:&quot;yyyy Q&quot;,&quot;TIME&quot;:&quot;hh:mm:ss&quot;,&quot;YEAR&quot;:&quot;yyyy&quot;,&quot;currency&quot;:{&quot;position&quot;:&quot;pre&quot;,&quot;symbol&quot;:&quot;&quot;},&quot;decimals&quot;:&quot;auto&quot;,&quot;level&quot;:&quot;DATETIME&quot;,&quot;percentage&quot;:false,&quot;separated&quot;:false},&quot;hidden&quot;:false,&quot;lost&quot;:false,&quot;name&quot;:&quot;deleted&quot;,&quot;oriColumnType&quot;:&quot;TEXT&quot;,&quot;sourceColumnType&quot;:&quot;STRING&quot;,&quot;sourceIndex&quot;:0,&quot;sourceName&quot;:&quot;deleted&quot;,&quot;typeOK&quot;:true},{&quot;categroyQuality&quot;:0,&quot;columnName&quot;:&quot;chartLabel&quot;,&quot;columnType&quot;:&quot;TEXT&quot;,&quot;columnWidth&quot;:10,&quot;dataQuality&quot;:1,&quot;dataType&quot;:&quot;STRING&quot;,&quot;dbTableName&quot;:&quot;qiye_user_chart_info&quot;,&quot;format&quot;:{&quot;DATETIME&quot;:&quot;yyyy/MM/dd hh:mm:ss&quot;,&quot;DAY&quot;:&quot;yyyy/MM/dd&quot;,&quot;DURATION&quot;:&quot;hh:mm&apos;ss\&quot;SSS&quot;,&quot;MONTH&quot;:&quot;yyyy/MM&quot;,&quot;QUARTER&quot;:&quot;yyyy Q&quot;,&quot;TIME&quot;:&quot;hh:mm:ss&quot;,&quot;YEAR&quot;:&quot;yyyy&quot;,&quot;currency&quot;:{&quot;position&quot;:&quot;pre&quot;,&quot;symbol&quot;:&quot;&quot;},&quot;decimals&quot;:&quot;auto&quot;,&quot;level&quot;:&quot;DATETIME&quot;,&quot;percentage&quot;:false,&quot;separated&quot;:false},&quot;hidden&quot;:false,&quot;lost&quot;:false,&quot;name&quot;:&quot;chartLabel&quot;,&quot;oriColumnType&quot;:&quot;TEXT&quot;,&quot;sourceColumnType&quot;:&quot;STRING&quot;,&quot;sourceIndex&quot;:0,&quot;sourceName&quot;:&quot;chartLabel&quot;,&quot;typeOK&quot;:true},{&quot;categroyQuality&quot;:0,&quot;columnName&quot;:&quot;create_date&quot;,&quot;columnType&quot;:&quot;DATETIME&quot;,&quot;columnWidth&quot;:19,&quot;dataQuality&quot;:1,&quot;dataType&quot;:&quot;DATE&quot;,&quot;dbTableName&quot;:&quot;qiye_user_chart_info&quot;,&quot;format&quot;:{&quot;DATETIME&quot;:&quot;yyyy/MM/dd hh:mm:ss&quot;,&quot;DAY&quot;:&quot;yyyy/MM/dd&quot;,&quot;DURATION&quot;:&quot;hh:mm&apos;ss\&quot;SSS&quot;,&quot;MONTH&quot;:&quot;yyyy/MM&quot;,&quot;QUARTER&quot;:&quot;yyyy Q&quot;,&quot;TIME&quot;:&quot;hh:mm:ss&quot;,&quot;YEAR&quot;:&quot;yyyy&quot;,&quot;currency&quot;:{&quot;position&quot;:&quot;pre&quot;,&quot;symbol&quot;:&quot;&quot;},&quot;decimals&quot;:&quot;auto&quot;,&quot;level&quot;:&quot;DATETIME&quot;,&quot;percentage&quot;:false,&quot;separated&quot;:false},&quot;hidden&quot;:false,&quot;lost&quot;:false,&quot;name&quot;:&quot;create_date&quot;,&quot;oriColumnType&quot;:&quot;DATETIME&quot;,&quot;sourceColumnType&quot;:&quot;DATE&quot;,&quot;sourceIndex&quot;:0,&quot;sourceName&quot;:&quot;create_date&quot;,&quot;typeOK&quot;:true},{&quot;categroyQuality&quot;:0,&quot;columnName&quot;:&quot;update_date&quot;,&quot;columnType&quot;:&quot;DATETIME&quot;,&quot;columnWidth&quot;:19,&quot;dataQuality&quot;:1,&quot;dataType&quot;:&quot;DATE&quot;,&quot;dbTableName&quot;:&quot;qiye_user_chart_info&quot;,&quot;format&quot;:{&quot;DATETIME&quot;:&quot;yyyy/MM/dd hh:mm:ss&quot;,&quot;DAY&quot;:&quot;yyyy/MM/dd&quot;,&quot;DURATION&quot;:&quot;hh:mm&apos;ss\&quot;SSS&quot;,&quot;MONTH&quot;:&quot;yyyy/MM&quot;,&quot;QUARTER&quot;:&quot;yyyy Q&quot;,&quot;TIME&quot;:&quot;hh:mm:ss&quot;,&quot;YEAR&quot;:&quot;yyyy&quot;,&quot;currency&quot;:{&quot;position&quot;:&quot;pre&quot;,&quot;symbol&quot;:&quot;&quot;},&quot;decimals&quot;:&quot;auto&quot;,&quot;level&quot;:&quot;DATETIME&quot;,&quot;percentage&quot;:false,&quot;separated&quot;:false},&quot;hidden&quot;:false,&quot;lost&quot;:false,&quot;name&quot;:&quot;update_date&quot;,&quot;oriColumnType&quot;:&quot;DATETIME&quot;,&quot;sourceColumnType&quot;:&quot;DATE&quot;,&quot;sourceIndex&quot;:0,&quot;sourceName&quot;:&quot;update_date&quot;,&quot;typeOK&quot;:true}],&quot;joinType&quot;:&quot;inner&quot;,&quot;newNode&quot;:false,&quot;tableAlias&quot;:&quot;qiye_user_chart_info&quot;,&quot;tableLost&quot;:false,&quot;tableName&quot;:&quot;qiye_user_chart_info&quot;},&quot;sourceType&quot;:&quot;DB_CONNECTION&quot;,&quot;storageSize&quot;:-1,&quot;titleRow&quot;:-1,&quot;updateData&quot;:false,&quot;updateType&quot;:0,&quot;uploadDate&quot;:1493277716373}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">api/dataconnectors/${datatableId}/updateconfig/preview</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>true</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <sentBytes>true</sentBytes>
+                <threadCounts>true</threadCounts>
+                <idleTime>true</idleTime>
+                <connectTime>true</connectTime>
+              </value>
+            </objProp>
+            <stringProp name="filename"></stringProp>
+          </ResultCollector>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

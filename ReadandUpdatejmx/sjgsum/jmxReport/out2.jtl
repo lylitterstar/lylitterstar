@@ -1,0 +1,19 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,Latency,IdleTime,Connect
+1496224265138,456,/enterprise/shujuguan/signin,200,OK,upload_file 1-1,text,true,,3171,303,1,1,456,0,297
+1496224265598,12584,api/dataconnectors/excel/upload,200,OK,upload_file 1-1,text,true,,412,6466778,1,1,12584,0,0
+1496224278205,34503,api/dataconnectors/excel/createtable,200,OK,upload_file 1-1,text,true,,13861,355,1,1,34503,0,149
+1496224652359,5391,/enterprise/shujuguan/signin,200,OK,upload_file 1-1,text,true,,3171,303,1,1,5391,0,5273
+1496224657758,10636,api/dataconnectors/excel/upload,200,OK,upload_file 1-1,text,true,,412,6466790,1,1,10636,0,100
+1496224668420,30502,api/dataconnectors/excel/createtable,200,OK,upload_file 1-1,text,true,,13861,355,1,1,30502,0,150
+1496224878643,470,/enterprise/shujuguan/signin,200,OK,upload_file 1-1,text,true,,3171,303,1,1,470,0,327
+1496224879121,12201,api/dataconnectors/excel/upload,200,OK,upload_file 1-1,text,true,,412,6466793,1,1,12201,0,0
+1496224891353,34302,api/dataconnectors/excel/createtable,200,OK,upload_file 1-1,text,true,,13861,355,1,1,34302,0,91
+1496224960358,394,/enterprise/shujuguan/signin,200,OK,upload_file 1-1,text,true,,3171,303,1,1,394,0,284
+1496224960763,10094,api/dataconnectors/excel/upload,200,OK,upload_file 1-1,text,true,,412,6466799,1,1,10094,0,0
+1496224970897,35842,api/dataconnectors/excel/createtable,200,OK,upload_file 1-1,text,true,,13861,355,1,1,35842,0,98
+1496225087405,407,/enterprise/shujuguan/signin,200,OK,upload_file 1-1,text,true,,3171,303,1,1,407,0,294
+1496225087820,10408,api/dataconnectors/excel/upload,200,OK,upload_file 1-1,text,true,,412,6466787,1,1,10408,0,0
+1496225098250,33482,api/dataconnectors/excel/createtable,200,OK,upload_file 1-1,text,true,,13861,355,1,1,33482,0,91
+1496226050609,412,/enterprise/shujuguan/signin,200,OK,upload_file 1-1,text,true,,3171,303,1,1,412,0,279
+1496226051032,11062,api/dataconnectors/excel/upload,200,OK,upload_file 1-1,text,true,,412,6466799,1,1,11062,0,0
+1496226062129,28524,api/dataconnectors/excel/createtable,200,OK,upload_file 1-1,text,true,,13861,355,1,1,28524,0,91
