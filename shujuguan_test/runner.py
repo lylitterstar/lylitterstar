@@ -18,6 +18,7 @@ def allCase():
 def runTextAllCase():
     runner = unittest.TextTestRunner()
     runner.run(allCase())
+
 def runHTMLAllCase():
     now = time.strftime("%Y-%m-%d-%H_%M_%S", time.localtime(time.time()))
     reportPath=os.path.join(report_path,"HTMLtemplate_"+now+".html")
@@ -26,8 +27,9 @@ def runHTMLAllCase():
     runner=HTMLTestRunner.HTMLTestRunner(stream=fp,
                                            title='自动化测试报告：',
                                            description='用例执行情况：')
-    fp.close()
+
     runner.run(allCase())
+    fp.close()
 
 if __name__=="__main__":
     # runTextAllCase()

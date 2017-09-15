@@ -10,27 +10,31 @@ import sys
 sys.path.append("../..")
 from common  import help_selenium as help
 from page.test_login_page import test_login_page
+from common import operateYaml
 class BaseCase(unittest.TestCase):
-    # def __init__(self):
-    #     # self.driver=driver
-    #     #修改为读取配置文件
-    #     loginUrl="https://shujuguan.shujuguan.cn/login"
-    #     self.driver.get(loginUrl)
     #登陆
     def setUp(self):
         self.driver=help.browser()
-        loginUrl = "https://shujuguan.shujuguan.cn/login"
+        #读取配置文件
+        rr=os.getcwd()
+        print("test==",rr)
+        data_login_element=operateYaml.getYaml("login/login.yaml")
+        loginUrl=data_login_element[0]["url"]
         self.driver.get(loginUrl)
-        testLogin=test_login_page(self.driver)
+        testLogin=test_login_page(self.driver,data_login_element)
         testLogin.test_login()
+
+    def tearDown(self):
+        self.driver.quit()
 
 
 
 
 
 if __name__=="__main__":
-    b=BaseCase("dt")
     print("test")
+    print(os.getcwd())
+    print(os.path.join(os.path.dirname(os.getcwd()),"yaml/login/login.yaml"))
 
 
 
