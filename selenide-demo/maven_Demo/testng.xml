@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="/home/dushanshan/git/selenide-demo/maven_Demo/src/test/java/org/selenide/testNG/example">
+        <classes>
+            <class name="org.selenide.testNG.example.GooglePage2">
+                <methods><include name="testUserSearch"/>
+                    <include name="testPrint1"/>
+                    <include name="testPrint2"/>
+                </methods>
+            </class>
+            <class name="org.selenide.testNG.example.SjgLoginPage">
+                <methods>
+                    <include name="testLogin"/>
+                    <include name="testSJGPrint1"/>
+                    <include name="testSJGPrint2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

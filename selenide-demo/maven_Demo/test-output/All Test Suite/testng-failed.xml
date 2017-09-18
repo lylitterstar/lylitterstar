@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [All Test Suite]">
+  <test name="/home/dushanshan/git/selenide-demo/maven_Demo/src/test/java/org/selenide/testNG/example(failed)">
+    <classes>
+      <class name="org.selenide.testNG.example.SjgLoginPage">
+        <methods>
+          <include name="setUp"/>
+          <include name="afterClass"/>
+          <include name="testLogin" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- org.selenide.testNG.example.SjgLoginPage -->
+    </classes>
+  </test> <!-- /home/dushanshan/git/selenide-demo/maven_Demo/src/test/java/org/selenide/testNG/example(failed) -->
+</suite> <!-- Failed suite [All Test Suite] -->

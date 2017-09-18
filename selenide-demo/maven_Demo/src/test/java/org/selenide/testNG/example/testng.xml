@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="suite1">
+    <test name="test_google" preserve-order="true">
+        <groups>
+            <run>
+                <include name="google"/>
+                <exclude name="sjg"/>
+            </run>
+        </groups>
+    </test>
+    <test name="suite2">
+        <classes>
+            <class name="org.selenide.testNG.example.SjgLoginPage">
+                <methods>
+                    　　　<!-- 此处用方法名来区别 -->
+                    <include name="testLogin" />
+                    <include name="testSJGPrint1" />
+                    <exclude name="testSJGPrint2" />
+                </methods>
+            </class>
+
+        </classes>
+
+    </test>
+</suite>

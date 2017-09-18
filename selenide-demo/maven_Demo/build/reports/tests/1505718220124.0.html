@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    
+    <meta charset="utf-8" />
+    <!--修正页面显示问题-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--以最新的IE版本模式来显示网页-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    <title>登录-数据观</title>
+    
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="/styles/auth/member.css" />
+
+    
+        <!-- 百度统计注入代码 -->
+        <script src="https://hm.baidu.com/hm.js?0acd6eec09e2d92908c7fe566f32def6"></script><script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?0acd6eec09e2d92908c7fe566f32def6";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+        </script>
+</head>
+
+<body>
+<div class="body-wrap">
+    <div class="main">
+        <div class="main-left">
+
+            <div class="div-top">
+                <a class="logo-136-26" href="http://www.shujuguan.cn"></a>
+                <a class="gohome" href="http://www.shujuguan.cn">返回首页</a>
+                <a class="btn-gologin" href="https://app.shujuguan.cn/apply">申请账号</a>
+            </div>
+
+            <div class="div-middle">
+                <div class="text-title">登录数据观</div>
+                <form id="signinForm" method="post" action="" novalidate="novalidate">
+                        <input class="input" id="domain" name="domain" value="shujuguan" placeholder="域名" readonly="readonly" type="hidden" />
+            
+                    <div class="input-text">
+                        <input class="input valid" id="username" name="username" value="" placeholder="邮箱" autocomplete="on" type="text" />
+                    </div>
+                    <div class="input-text">
+                        <input onfocus="this.type='password'" class="input" id="password" name="password" value="" placeholder="密码" autocomplete="off" maxlength="30" type="text" />
+                    </div>
+                    <div class="text-box">
+                        <div class="left">
+                            <input id="remember" class="checkbox" type="checkbox" />
+                            <label for="remember">七天内免登录</label>
+                        </div>
+                        <div class="right"><a href="/reset">忘记密码？</a></div>
+                    </div>
+                    <div class="text-error" style="display: none;"></div>
+                    <div class="input-box">
+                        <div class="btn-submit">登录</div>
+                    </div>
+                </form>
+            </div>
+            <div class="div-browser-notice" id="div-browser-notice">
+                <div class="title1">数据观是一款完全基于浏览器执行的复杂交互式图表应用，需要与HTML5完全兼容浏览器运行，IE浏览器因为与HTML5/CSS3标准兼容性不佳，无法完整体验所有产品功能，真诚建议您升级到最新版本的浏览器。</div>
+                <div class="title2">我们为您推荐如下经过测试的浏览器：</div>
+                <div class="browser-lists">
+                    <div class="browser-name"><b>谷歌浏览器</b></div>
+                    <div class="browser-website"><a href="http://www.google.com/chrome/browser/desktop" target="_blank">官网下载</a></div>
+                    <div class="browser-download"><a href="http://sjg-ent.oss-cn-beijing.aliyuncs.com/browser/ChromeSetup.exe" target="_blank">其他下载</a></div>
+                    <div class="browser-name browser-name-2"><b>搜狗浏览器</b></div>
+                    <div class="browser-website"><a href="http://ie.sogou.com" target="_blank">官网下载</a></div>
+                    <div class="browser-download"><a href="http://sjg-ent.oss-cn-beijing.aliyuncs.com/browser/sogou_explorer_7.0_0111.exe" target="_blank">其他下载</a></div>
+                    <div class="browser-name"><b>QQ浏览器</b></div>
+                    <div class="browser-website"><a href="http://browser.qq.com" target="_blank">官网下载</a></div>
+                    <div class="browser-download"><a href="http://sjg-ent.oss-cn-beijing.aliyuncs.com/browser/QQBrowser_Setup_SEM1.exe" target="_blank">其他下载</a></div>
+                    <div class="browser-name browser-name-2"><b>百度浏览器</b></div>
+                    <div class="browser-website"><a href="http://liulanqi.baidu.com" target="_blank">官网下载</a></div>
+                    <div class="browser-download"><a href="http://sjg-ent.oss-cn-beijing.aliyuncs.com/browser/bdbrowserSetup-8.4.100.3893-4214_11100016.exe" target="_blank">其他下载</a></div>
+                    <div class="browser-name"><b>360浏览器</b></div>
+                    <div class="browser-website"><a href="http://se.360.cn" target="_blank">官网下载</a></div>
+                    <div class="browser-download"><a href="http://sjg-ent.oss-cn-beijing.aliyuncs.com/browser/360se8.1.1.248.exe" target="_blank">其他下载</a></div>
+                    <div class="browser-name browser-name-2"><b>火狐浏览器</b></div>
+                    <div class="browser-website"><a href="http://www.firefox.com.cn" target="_blank">官网下载</a></div>
+                    <div class="browser-download"><a href="http://sjg-ent.oss-cn-beijing.aliyuncs.com/browser/Firefox-latest.exe" target="_blank">其他下载</a></div>
+                </div>
+            </div>
+            <div class="div-bottom"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=12011102000101" target="_blank">Copyright © 2014-2017 数据观 津ICP备12002153号-5</a></div>
+        </div>
+        <div class="main-right bg-image"></div>
+    </div>
+</div>
+
+
+<div class="section" style="display:none;">
+    <form>
+        <div class="logo"></div>
+            <span></span>
+            <i class="icon-plus"></i>
+            <span style="background-image: url()"></span>
+        </form></div>
+    
+
+
+
+<div class="upgrade">
+    <div class="banner"></div>
+    <div class="title">
+        <h1>数据观系统升级中</h1>
+    </div>
+    <div class="main">
+        <p class="time"></p>
+        <p>现在是数据观系统升级时间，给您带来不便，请您原谅</p>
+        <h2>如有需要请联系数据观客服</h2>
+        <ul>
+            <li>客服电话：400-013-9696</li>
+        </ul>
+    </div>
+</div>
+
+    <div class="person_notice">
+        <div class="icon"></div>
+        <div class="title">个人版用户公告</div>
+        <div class="text">
+            <p class="no-text-indent">尊敬的数据观用户：</p>
+            <p>该账号我们已经为您迁移到企业版，请使用您的企业版账号和密码登录，您的数据观个人版的资源(如数据、图表、图集)会陆续迁移到企业版中，如需紧急处理您可以通过如下方式联系我们。</p>
+            <p class="no-text-indent">
+                联系电话：18322311361<br />
+                技术支持邮箱：support@shujuguan.cn
+            </p>
+            <p class="no-text-indent" style="margin-bottom: 50px;">企业版具有更强大的功能，快来体验吧！</p>
+        </div>
+    </div>
+
+<script type="text/javascript" src="/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/js/ext/validate/1.15.0/jquery.validate.min.js"></script>
+<script type="text/javascript" src="/js/ext/validate/1.15.0/validate.ext.js"></script>
+
+
+<script>
+$(document).ready(function() {
+    // 微信浏览器中登录时，根据clearLocalstorage清理Localstorage
+    if (navigator.userAgent.indexOf('MicroMessenger') &gt; -1 &amp;&amp; '' == 'true') {
+        window.localStorage.removeItem('yuntu-token');
+    }
+    function getRequest() {
+        var url = location.search;
+        var theRequest = new Object();
+        if (url.indexOf("?") != -1) {
+            var str = url.substr(1);
+            strs = str.split("&amp;");
+            for (var i = 0; i &lt; strs.length; i++) {
+                theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+            }
+        }
+        return theRequest;
+    }
+    if ($('#domain').is(':visible')) {
+        $('#domain').focus();
+    } else {
+        $('#username').focus();
+    }
+    var validator = $("#signinForm").validate({
+        onkeyup: false,
+        onfocusout: false,
+        focusInvalid: false,
+        focusCleanup: true,
+        rules: {
+            domain: {
+                required: true
+            },
+            username: {
+                required: true,
+                mail: true,
+            },
+            password: {
+                required: true,
+                minlength: 6
+            }
+        },
+        messages: {
+            domain: {
+                required: '请输入域名',
+            },
+            username: {
+                required: '请输入正确的邮箱',
+                mail: '请输入正确的邮箱',
+            },
+            password: {
+                required: '请输入密码',
+                minlength: '密码长度不能小于6个字符'
+            }
+        },
+        errorPlacement: function(error, element) {
+            if ($('.text-error').text() == '') {
+                $('.text-error').text(error.text()).show();
+            }
+        },
+        submitHandler: function(form) {
+            $('.text-error').text('').hide();
+        }
+    });
+    $('.input-text &gt; input').keyup(function(e) {
+        if (e.keyCode != 13 &amp;&amp; $(this).val() !== '') {
+            $('.text-error').text('').hide();
+        } else if (e.keyCode == 13) {
+            $('.btn-submit').click();
+        }
+    });
+    function getNowFormatDate(t) {
+        var date = new Date(t);
+        var seperator1 = "-";
+        var seperator2 = ":";
+        var strMonth = date.getMonth() + 1;
+        var strDate = date.getDate();
+        var strHour = date.getHours();
+        var strMinute = date.getMinutes();
+        if (strMonth &gt;= 1 &amp;&amp; strMonth &lt;= 9) {
+            strMonth = "0" + strMonth;
+        }
+        if (strDate &gt;= 0 &amp;&amp; strDate &lt;= 9) {
+            strDate = "0" + strDate;
+        }
+        if (strHour &gt;= 0 &amp;&amp; strHour &lt;= 9) {
+            strHour = "0" + strHour;
+        }
+        if (strMinute &gt;= 0 &amp;&amp; strMinute &lt;= 9) {
+            strMinute = "0" + strMinute;
+        }
+        var currentdate = date.getFullYear() + seperator1 + strMonth + seperator1 + strDate + " " + strHour + seperator2 + strMinute;
+        return currentdate;
+    }
+    function showUpgradeMsg (datatime) {
+        $('.body-wrap').hide();
+        $('.upgrade').show();
+        if (datatime) {
+            $('.upgrade .time').text(getNowFormatDate(datatime * 1000) + '至' + getNowFormatDate((parseInt(datatime) + 7200) * 1000));
+        } else {
+            $('.upgrade .time').text('');
+        }
+    }
+    var headers = { 
+        'Content-Type' : 'application/json;charset=utf-8'
+    };
+    var isSubmit = true;
+    $('.btn-submit').click(function () {
+        $('.text-error').text('').hide();
+        if ($("#signinForm").valid() &amp;&amp; isSubmit) {
+            var oReq = getRequest();
+            var remember = 0;
+            if($('#remember').is(':checked') == true){
+                remember = 1;
+            }
+            var data = {
+                orgName  : $.trim($('#domain').val()),
+                username : $.trim($("#username").val()),
+                password : $.trim($("#password").val()),
+                remember : remember,
+                hash     : location.hash,
+                scene    : oReq.scene?oReq.scene:'',
+                token    : oReq.signature?oReq.signature:''
+            }
+            $.ajax({
+                type: 'POST',
+                url: '/nauth/logincheck',
+                headers: headers,
+                data: JSON.stringify(data),
+                beforeSend: function () {
+                    $('.btn-submit').text('登录中...');
+                    isSubmit = false;
+                },
+                complete: function () {
+                    $('.btn-submit').text('登录');
+                    isSubmit = true;
+                },
+                success: function (data) {
+                    if (!data) {
+                        $(".text-error").text('异常结果返回').show();
+                        return;
+                    }
+                    if (data.jumpto == 'upgrade') {
+                        if (parseInt(data.account_status) == 0) {
+                            window.open(data.url, '_self');
+                        } else if (parseInt(data.account_status) == 1) {
+                            showUpgradeMsg(data.update_time);
+                        } else if (parseInt(data.account_status) == 3) {
+                            $('.body-wrap').hide();
+                            $('.person_notice').show();
+                        }
+                        return;
+                    }
+
+                    // 多企业选择跳转
+                    if (data.redirectUrl) {
+                        window.open(data.redirectUrl, '_self');
+                        return;
+                    }
+
+                    // 获取用户上次退出登录前的页面地址
+                    var yuntuhash = window.localStorage.getItem('yuntu-hash-' + data.oid + '-' + data.uid);
+                    var yuntu_url = data.url;
+                    if (data.hash) {
+                        window.localStorage.setItem('yuntu-hash-' + data.oid + '-' + data.uid, data.hash);
+                        yuntu_url = data.url + data.hash;
+                    } else if (yuntuhash) {
+                        window.localStorage.setItem('yuntu-hash-' + data.oid + '-' + data.uid, yuntuhash);
+                        yuntu_url = data.url + yuntuhash;
+                    }
+                    window.open(yuntu_url, '_self');
+                },
+                error: function (err) {
+                    $(".text-error").text(err.responseText).show();
+                },
+                dataType: 'json'
+            });
+        }
+    });
+});
+</script>
+<script>var isInApp = false;</script>
+<script type="text/javascript">
+// 浏览器兼容html5判断，如果不支持html5，或者是ie，直接显示下载浏览器页面
+window.stopLoadingApp = false;
+(function($) {
+    "use strict";
+    var ua = navigator.userAgent.toLowerCase();
+    var isIE = ua.match(/rv:([\d.]+)\) like gecko/) || ua.match(/msie ([\d.]+)/);
+    isIE = isIE ? isIE[1] : undefined;
+    var notHTML5;
+    if (!window.applicationCache) {
+        notHTML5 = true;
+    }
+    if (isInApp == true) {
+        if (isIE || notHTML5) {
+            $('.div-browser-notice').show();
+            window.stopLoadingApp = true;
+        } else {
+            $('.pre_loading').show();
+        }
+        if (isMobile()) {
+            $('body').addClass('mobile-mode');
+        }
+    } else {
+        if (isIE || notHTML5) {
+            $('.div-browser-notice').show();
+        }
+    }
+}(jQuery));
+function isMobile() {
+    var isMobile = false; //initiate as false
+    // device detection
+    if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent)
+        || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(navigator.userAgent.substr(0, 4))) isMobile = true;
+
+    return isMobile;
+}
+</script>
+<div class="hidden">
+</div>
+
+
+
+</body></html>
