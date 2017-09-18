@@ -5,6 +5,7 @@ import unittest
 import os
 import HTMLTestRunner
 import time
+from common.send_email import email_send
 #用例路径
 case_path=os.path.join(os.getcwd(),"case")
 #报告存放路径
@@ -30,6 +31,9 @@ def runHTMLAllCase():
 
     runner.run(allCase())
     fp.close()
+
+    #send email
+    email_send(reportPath)
 
 if __name__=="__main__":
     # runTextAllCase()

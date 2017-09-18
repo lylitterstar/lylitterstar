@@ -6,6 +6,7 @@
   find_type: by_class
   test_id: 1001
   test_intr: 登陆数据观
+  url: https://shujuguan.shujuguan.cn/login
 -
   element_info: username
   find_type: by_id

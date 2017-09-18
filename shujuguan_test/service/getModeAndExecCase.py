@@ -2,18 +2,18 @@
 __author__='dushanshan'
 import sys
 sys.path.append("..")
-testpath2=sys.path
-print ('testsys path=',testpath2)
 from common import operateYaml
 from common.operateElement import OperateElement
-
+from testMode.modeCase import GetCase,GetCaseInfo
 class ModeAndExecCase():
-    def __init__(self,test_module="",GetCaseInfo="",GetCase=""):
+    def __init__(self,test_module="",**kwargs):
+        print(kwargs.keys())
         self.test_module=test_module
-        self.GetCaseInfo=GetCaseInfo
-        self.GetCase=GetCase
+        self.GetCaseInfo=kwargs["GetCaseInfo"]
+        self.GetCase=kwargs["GetCase"]
+        self.driver=kwargs["driver"]
     def getModeList(self,file):
-        listData=operateYaml.getYaml("appstore/appstoreView.yaml")
+        listData=operateYaml.getYaml(file)
         for i in range(len(listData)):
             if i==0:
                 # 用例id
@@ -27,10 +27,24 @@ class ModeAndExecCase():
             self.GetCase.index = listData[i].get("index", "false")
             self.GetCase.text = listData[i].get("text", "false")  # 输入的text
             # 验证类型
-            self.GetWebCase.find_type = listData[i].get("find_type", "false")
+            self.GetCase.find_type = listData[i].get("find_type", "false")
         return listData
+    def execCase(self,file):
+        operateElement = OperateElement(self.driver)
+        dataMode=self.getModeList(file)
+        result = None
+        for k in dataMode:
+            if k.get("operate_type") != None:
+                result = operateElement.operate_element(k)
+                if result == False:
+                    break
+        return result
+
+
 if __name__=="__main__":
-    mc=ModeAndExecCase()
+    getCase=GetCase()
+    getCaseInfo=GetCaseInfo()
+    mc=ModeAndExecCase(GetCaseInfo=getCaseInfo,GetCase=getCase)
     f="/home/dushanshan/git/lilytao5_python/python/shujuguan_test/case/yaml/login/login.yaml"
     data=mc.getModeList(f)
-    print("return data \n"+str(data))
+    print("return data :\n"+str(data))
