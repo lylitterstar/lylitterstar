@@ -2,8 +2,6 @@
 __author__='dushanshan'
 from schematics.models import Model
 from schematics.types import StringType,IntType
-from schematics.types.compound import ListType,MultiType
-
 
 class GetCase(Model):
     element_info = StringType() # (查找类型：name/id/xpah)
@@ -12,6 +10,7 @@ class GetCase(Model):
     name = StringType()
     index = IntType()
     text = StringType()
+    url=StringType()
 
 
 # 用例的基本信息

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-__author__ = 'shikun'
+__author__ = 'dushanshan'
 # 查找元素的方式
 class GetVariable(object):
     NAME = "name"
@@ -27,7 +27,7 @@ class GetVariable(object):
 
     SEND_KEYS = "send_keys"
     FIND_STR = "find_str"
-    WAIT_TIME = 5
+    WAIT_TIME = 50
 
     #selenium
     SEND_CODE = "send_code" # 输入验证码

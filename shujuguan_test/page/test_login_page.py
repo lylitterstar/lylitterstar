@@ -3,34 +3,17 @@ __author__='dushanshan'
 import sys
 sys.path.append("..")
 from common  import help_selenium as help
-from selenium.webdriver.common.keys import Keys
-import time
-from common import operateYaml
-from common.operateElement import OperateElement
-
+from service import getModeAndExecCase as getModeandExec
 class test_login_page():
-    # Get username textbox and input username
-    def __init__(self,driver,data_login_element):
-        self.driver=driver
-        self.operateElement=OperateElement(self.driver)
-        self.data_login_element=data_login_element
-    #　可删掉，该方法
-    def set_username(self):
-        name=self.driver.find_element_by_id('username')
-        name.clear()
-        name.send_keys(self.username)
 
-    # Get password textbox and input password, then hit return
-    def set_password(self):
-        pwd=self.driver.find_element_by_id('password')
-        pwd.clear()
-        pwd.send_keys(self.password+Keys.RETURN)
-        time.sleep(10)
+    def __init__(self,driver,file):
+        self.driver=driver
+        self.file=file
+        # self.mc = getModeandExec.ModeAndExecCase("test_login",GetCaseInfo=GetCaseInfo(), GetCase=GetCase(),driver=self.driver)
+        self.mc = getModeandExec.ModeAndExecCase("test_login", driver=self.driver)
 
     def login(self):
-        for k in self.data_login_element:
-            if k.get("operate_type") != None:
-                self.operateElement.operate_element(k)
+        self.mc.execCase(self.file)
 
     def test_login(self):
         self.login()
@@ -38,7 +21,11 @@ class test_login_page():
 
 
 if __name__=="__main__":
-    testLoginPage=test_login_page()
+    driver = help.browser()
+    file = "login/login.yaml"
+    testLoginPage=test_login_page(driver=driver,file=file)
+    testLoginPage.test_login()
+    driver.quit()
 
 
 

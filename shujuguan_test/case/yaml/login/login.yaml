@@ -1,7 +1,5 @@
 ---
 -
- url: https://shujuguan.shujuguan.cn/login
--
   element_info: text-title
   find_type: by_class
   test_id: 1001

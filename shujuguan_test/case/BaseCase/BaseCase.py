@@ -15,15 +15,13 @@ class BaseCase(unittest.TestCase):
     #登陆
     def setUp(self):
         self.driver=help.browser()
-        #读取配置文件
+        # 读取配置文件-----以后设置成
+        file = "login/login.yaml"
         rr=os.getcwd()
-        print("test==",rr)
-        data_login_element=operateYaml.getYaml("login/login.yaml")
-        loginUrl=data_login_element[0]["url"]
-        self.driver.get(loginUrl)
-        testLogin=test_login_page(self.driver,data_login_element)
+        testLogin=test_login_page(self.driver,file)
         testLogin.test_login()
-
+    # def test_ll(self):
+    #     print "test is running!"
     def tearDown(self):
         self.driver.quit()
 
@@ -35,6 +33,8 @@ if __name__=="__main__":
     print("test")
     print(os.getcwd())
     print(os.path.join(os.path.dirname(os.getcwd()),"yaml/login/login.yaml"))
+    unittest.main()
+
 
 
 

@@ -11,17 +11,19 @@ from testMode.modeCase import GetCase,GetCaseInfo
 import unittest
 class AppstoreViewPage(BaseCase):
 
-    def appstoreView(self):
+    def appstoreView(self,file):
         #业务处理部分
-        modeAndExec=ModeAndExecCase(driver=self.driver,GetCaseInfo=GetCaseInfo(),GetCase=GetCase())
-        result=modeAndExec.execCase("appstore/appstoreView.yaml")
+        # mc=ModeAndExecCase("test_app_store_view", GetCaseInfo=GetCaseInfo(), GetCase=GetCase(),driver=self.driver)
+        mc = ModeAndExecCase("test_app_store_view",driver=self.driver)
+        result=mc.execCase(file)
         self.assertIsNone(result)
 
     def test_appstore_view(self):
-        self.appstoreView()
+        file = "appstore/appstoreView.yaml";
+        self.appstoreView(file)
 
-    # def test_try2(self):
-    #     print ('test case 2 try trying!!!!!')
+    def test_try2(self):
+        print ('test case 2 try trying!!!!!')
 
 if __name__=="__main__":
    unittest.main()

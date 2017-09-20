@@ -42,9 +42,9 @@ def send_code():
     time.sleep(10)
 # 点击事件
 def operate_click(mOperate,cts):
-    if mOperate.get("find_type") == common.find_element_by_id or mOperate.get("find_type") == common.find_element_by_name or mOperate.get("find_type") == common.find_element_by_xpath or mOperate.get("find_type") == common.find_element_by_class_name:
+    if mOperate["find_type"] == common.find_element_by_id or mOperate["find_type"] == common.find_element_by_name or mOperate["find_type"] == common.find_element_by_xpath or mOperate["find_type"] == common.find_element_by_class_name:
         elements_by(mOperate, cts).click()
-    if mOperate.get("find_type") == common.find_elements_by_id or mOperate.get("find_type") == common.find_elements_by_name or mOperate.get("find_type") == common.find_elements_by_class_name:
+    if mOperate["find_type"] == common.find_elements_by_id or mOperate["find_type"] == common.find_elements_by_name or mOperate["find_type"] == common.find_elements_by_class_name:
         elements_by(mOperate, cts)[mOperate["index"]].click()
     # 记录运行过程中的一些系统日志，比如闪退会造成自动化测试停止
 
@@ -64,4 +64,4 @@ def elements_by(mOperate, cts):
         common.find_element_by_class_name: lambda :cts.find_element_by_class_name(mOperate['element_info']),
         common.find_elements_by_class_name: lambda :cts.find_elements_by_class_name(mOperate['element_info'])[mOperate['index']]
     }
-    return elements[mOperate.get("find_type")]()
+    return elements[mOperate["find_type"]]()
