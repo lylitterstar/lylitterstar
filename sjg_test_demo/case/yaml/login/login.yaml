@@ -1,0 +1,21 @@
+---
+-
+  element_info: text-title
+  find_type: by_class
+  test_id: 1001
+  test_intr: 登陆数据观
+  url: https://shujuguan.shujuguan.cn/login
+-
+  element_info: username
+  find_type: by_id
+  operate_type: send_keys
+  text: dushanshan@gbase.cn
+-
+  element_info: password
+  find_type: by_id
+  operate_type: send_keys
+  text: 123456
+-
+  element_info: btn-submit
+  find_type: class_name
+  operate_type: click

@@ -1,0 +1,7 @@
+---
+-
+  element_info: appstore
+  find_type: by_id
+  operate_type: click
+  test_id: 1002
+  test_intr: 应用市场
