@@ -30,7 +30,6 @@ class OperateElement():
         if self.findElement(mOperate):
             elements = {
                 common.CLICK: lambda: operate_click(mOperate, self.driver),
-                # GetVariable.TAP: lambda: operate_tap(mOperate["find_type"], self.driver,  mOperate["element_info"], arg),
                 common.SEND_KEYS: lambda: send_keys(mOperate, self.driver),
                 common.SEND_CODE: lambda : send_code()
             }

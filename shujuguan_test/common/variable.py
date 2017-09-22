@@ -37,3 +37,12 @@ class GetVariable(object):
     REPORT_INIT = "d:/init.txt"
     REPORT_COLLECT_PATH = "d:/collect.txt"
     CRASH_LOG_PATH = "d:/crash.txt" # 存放crash的json文件名
+    # case sucesss num
+    test_success=0
+    test_failed=0
+    test_sum=0
+
+    DetailData = {"init": [], "info": []}
+    TotalResult = {"init": [], "info": []}
+    RESULT_PATH="/home/dushanshan/git/lilytao5_python/python/shujuguan_test/testReport.xlsx"
+    REPORT_FILE="testReport.xlsx"
