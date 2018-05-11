@@ -1,0 +1,57 @@
+2018-03-27 16:56:04,011-userservice.py[line:37]-INFO-sjg test begin============
+2018-03-27 16:57:50,953-userservice.py[line:37]-INFO-sjg test begin============
+2018-03-27 16:58:37,079-userservice.py[line:37]-INFO-sjg test begin============
+2018-03-27 16:58:37,471-test_login.py[line:40]-INFO-TestLogin setup run
+2018-03-27 16:58:37,629-test_login.py[line:141]-INFO-test_login_error run successful,username:23%&*23(),password:@$%%$*^$%$
+2018-03-27 16:58:37,738-test_login.py[line:141]-INFO-test_login_error run successful,username:errormessage@shujuguan.cn,password:shujuguan
+2018-03-27 16:58:37,885-test_login.py[line:141]-INFO-test_login_error run successful,username:maguohui@shujuguan.cn,password:errormessage
+2018-03-27 16:58:37,886-test_login.py[line:40]-INFO-TestLogin setup run
+2018-03-27 16:58:38,372-test_login.py[line:103]-INFO-test_logincheck_moreorg successed!
+2018-03-27 16:58:38,372-test_login.py[line:40]-INFO-TestLogin setup run
+2018-03-27 16:58:38,520-test_login.py[line:119]-INFO-TestLogin test_logincheck_multi run
+2018-03-27 16:58:38,520-test_login.py[line:40]-INFO-TestLogin setup run
+2018-03-27 16:58:38,705-test_login.py[line:58]-INFO-TestLogin test_logincheck_single run
+2018-03-27 17:02:45,360-userservice.py[line:37]-INFO-sjg test begin============
+2018-03-27 17:02:45,859-test_login.py[line:40]-INFO-TestLogin setup run
+2018-03-27 17:02:46,033-test_login.py[line:141]-INFO-test_login_error run successful,username:23%&*23(),password:@$%%$*^$%$
+2018-03-27 17:02:46,194-test_login.py[line:141]-INFO-test_login_error run successful,username:errormessage@shujuguan.cn,password:shujuguan
+2018-03-27 17:02:46,400-test_login.py[line:141]-INFO-test_login_error run successful,username:maguohui@shujuguan.cn,password:errormessage
+2018-03-27 17:02:46,400-test_login.py[line:40]-INFO-TestLogin setup run
+2018-03-27 17:02:46,874-test_login.py[line:103]-INFO-test_logincheck_moreorg successed!
+2018-03-27 17:02:46,874-test_login.py[line:40]-INFO-TestLogin setup run
+2018-03-27 17:02:48,929-test_login.py[line:119]-INFO-TestLogin test_logincheck_multi run
+2018-03-27 17:02:48,929-test_login.py[line:40]-INFO-TestLogin setup run
+2018-03-27 17:02:49,150-test_login.py[line:58]-INFO-TestLogin test_logincheck_single run
+2018-03-27 17:05:07,441-userservice.py[line:37]-INFO-sjg test begin============
+2018-03-27 17:05:07,759-test_login.py[line:40]-INFO-TestLogin setup run
+2018-03-27 17:05:07,869-test_login.py[line:141]-INFO-test_login_error run successful,username:23%&*23(),password:@$%%$*^$%$
+2018-03-27 17:05:07,974-test_login.py[line:141]-INFO-test_login_error run successful,username:errormessage@shujuguan.cn,password:shujuguan
+2018-03-27 17:05:08,143-test_login.py[line:141]-INFO-test_login_error run successful,username:maguohui@shujuguan.cn,password:errormessage
+2018-03-27 17:05:08,143-test_login.py[line:40]-INFO-TestLogin setup run
+2018-03-27 17:05:08,388-test_login.py[line:103]-INFO-test_logincheck_moreorg successed!
+2018-03-27 17:05:08,389-test_login.py[line:40]-INFO-TestLogin setup run
+2018-03-27 17:05:08,538-test_login.py[line:119]-INFO-TestLogin test_logincheck_multi run
+2018-03-27 17:05:08,539-test_login.py[line:40]-INFO-TestLogin setup run
+2018-03-27 17:05:08,717-test_login.py[line:58]-INFO-TestLogin test_logincheck_single run
+2018-03-27 17:10:21,624-userservice.py[line:37]-INFO-sjg test begin============
+2018-03-27 17:10:22,019-test_login.py[line:40]-INFO-TestLogin setup run
+2018-03-27 17:10:22,169-test_login.py[line:141]-INFO-test_login_error run successful,username:23%&*23(),password:@$%%$*^$%$
+2018-03-27 17:10:22,292-test_login.py[line:141]-INFO-test_login_error run successful,username:errormessage@shujuguan.cn,password:shujuguan
+2018-03-27 17:10:22,452-test_login.py[line:141]-INFO-test_login_error run successful,username:maguohui@shujuguan.cn,password:errormessage
+2018-03-27 17:10:22,452-test_login.py[line:40]-INFO-TestLogin setup run
+2018-03-27 17:10:22,647-test_login.py[line:103]-INFO-test_logincheck_moreorg successed!
+2018-03-27 17:10:22,647-test_login.py[line:40]-INFO-TestLogin setup run
+2018-03-27 17:10:22,845-test_login.py[line:119]-INFO-TestLogin test_logincheck_multi run
+2018-03-27 17:10:22,845-test_login.py[line:40]-INFO-TestLogin setup run
+2018-03-27 17:10:23,020-test_login.py[line:58]-INFO-TestLogin test_logincheck_single run
+2018-03-27 17:13:06,629-userservice.py[line:37]-INFO-sjg test begin============
+2018-03-27 17:13:07,075-test_login.py[line:40]-INFO-TestLogin setup run
+2018-03-27 17:13:11,191-test_login.py[line:141]-INFO-test_login_error run successful,username:23%&*23(),password:@$%%$*^$%$
+2018-03-27 17:13:11,362-test_login.py[line:141]-INFO-test_login_error run successful,username:errormessage@shujuguan.cn,password:shujuguan
+2018-03-27 17:13:11,534-test_login.py[line:141]-INFO-test_login_error run successful,username:maguohui@shujuguan.cn,password:errormessage
+2018-03-27 17:13:11,534-test_login.py[line:40]-INFO-TestLogin setup run
+2018-03-27 17:13:11,717-test_login.py[line:103]-INFO-test_logincheck_moreorg successed!
+2018-03-27 17:13:11,718-test_login.py[line:40]-INFO-TestLogin setup run
+2018-03-27 17:13:12,595-test_login.py[line:119]-INFO-TestLogin test_logincheck_multi run
+2018-03-27 17:13:12,595-test_login.py[line:40]-INFO-TestLogin setup run
+2018-03-27 17:13:12,847-test_login.py[line:58]-INFO-TestLogin test_logincheck_single run

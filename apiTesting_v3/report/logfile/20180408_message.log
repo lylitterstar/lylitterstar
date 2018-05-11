@@ -1,0 +1,49 @@
+2018-04-08 10:41:41,853-userservice.py[line:38]-INFO-sjg test begin============
+2018-04-08 10:41:48,602-userservice.py[line:41]-INFO-sjg token insert successfully============
+2018-04-08 10:41:48,639-test_login.py[line:40]-INFO-TestLogin setup run
+2018-04-08 10:41:50,404-test_login.py[line:141]-INFO-test_login_error run successful,username:23%&*23(),password:@$%%$*^$%$
+2018-04-08 10:41:53,106-test_login.py[line:141]-INFO-test_login_error run successful,username:errormessage@shujuguan.cn,password:shujuguan
+2018-04-08 10:41:53,625-test_login.py[line:141]-INFO-test_login_error run successful,username:maguohui@shujuguan.cn,password:errormessage
+2018-04-08 10:41:53,625-test_login.py[line:40]-INFO-TestLogin setup run
+2018-04-08 10:41:54,046-test_login.py[line:103]-INFO-test_logincheck_moreorg successed!
+2018-04-08 10:41:54,047-test_login.py[line:40]-INFO-TestLogin setup run
+2018-04-08 10:41:54,824-test_login.py[line:119]-INFO-TestLogin test_logincheck_multi run
+2018-04-08 10:41:54,825-test_login.py[line:40]-INFO-TestLogin setup run
+2018-04-08 10:41:55,444-test_login.py[line:58]-INFO-TestLogin test_logincheck_single run
+2018-04-08 14:02:54,582-userservice.py[line:38]-INFO-sjg test begin============
+2018-04-08 14:03:48,652-userservice.py[line:39]-INFO-sjg test begin============
+2018-04-08 14:03:49,057-userservice.py[line:42]-INFO-sjg token insert successfully============
+2018-04-08 14:03:49,060-test_login.py[line:40]-INFO-TestLogin setup run
+2018-04-08 14:03:49,581-test_login.py[line:141]-INFO-test_login_error run successful,username:23%&*23(),password:@$%%$*^$%$
+2018-04-08 14:03:49,806-test_login.py[line:141]-INFO-test_login_error run successful,username:errormessage@shujuguan.cn,password:shujuguan
+2018-04-08 14:03:50,440-test_login.py[line:141]-INFO-test_login_error run successful,username:maguohui@shujuguan.cn,password:errormessage
+2018-04-08 14:03:50,441-test_login.py[line:40]-INFO-TestLogin setup run
+2018-04-08 14:03:50,770-test_login.py[line:103]-INFO-test_logincheck_moreorg successed!
+2018-04-08 14:03:50,771-test_login.py[line:40]-INFO-TestLogin setup run
+2018-04-08 14:03:50,954-test_login.py[line:119]-INFO-TestLogin test_logincheck_multi run
+2018-04-08 14:03:50,955-test_login.py[line:40]-INFO-TestLogin setup run
+2018-04-08 14:03:53,053-test_login.py[line:58]-INFO-TestLogin test_logincheck_single run
+2018-04-08 15:27:23,732-userservice.py[line:39]-INFO-sjg test begin============
+2018-04-08 15:27:24,083-userservice.py[line:42]-INFO-sjg token insert successfully============
+2018-04-08 15:27:24,086-test_login.py[line:40]-INFO-TestLogin setup run
+2018-04-08 15:27:24,264-test_login.py[line:141]-INFO-test_login_error run successful,username:23%&*23(),password:@$%%$*^$%$
+2018-04-08 15:27:24,406-test_login.py[line:141]-INFO-test_login_error run successful,username:errormessage@shujuguan.cn,password:shujuguan
+2018-04-08 15:27:24,594-test_login.py[line:141]-INFO-test_login_error run successful,username:maguohui@shujuguan.cn,password:errormessage
+2018-04-08 15:27:24,595-test_login.py[line:40]-INFO-TestLogin setup run
+2018-04-08 15:27:24,987-test_login.py[line:103]-INFO-test_logincheck_moreorg successed!
+2018-04-08 15:27:24,987-test_login.py[line:40]-INFO-TestLogin setup run
+2018-04-08 15:27:25,304-test_login.py[line:119]-INFO-TestLogin test_logincheck_multi run
+2018-04-08 15:27:25,305-test_login.py[line:40]-INFO-TestLogin setup run
+2018-04-08 15:27:25,899-test_login.py[line:58]-INFO-TestLogin test_logincheck_single run
+2018-04-08 15:29:42,020-userservice.py[line:39]-INFO-sjg test begin============
+2018-04-08 15:29:42,534-userservice.py[line:42]-INFO-sjg token insert successfully============
+2018-04-08 15:29:42,536-test_login.py[line:40]-INFO-TestLogin setup run
+2018-04-08 15:29:42,637-test_login.py[line:141]-INFO-test_login_error run successful,username:23%&*23(),password:@$%%$*^$%$
+2018-04-08 15:29:42,741-test_login.py[line:141]-INFO-test_login_error run successful,username:errormessage@shujuguan.cn,password:shujuguan
+2018-04-08 15:29:42,890-test_login.py[line:141]-INFO-test_login_error run successful,username:maguohui@shujuguan.cn,password:errormessage
+2018-04-08 15:29:42,891-test_login.py[line:40]-INFO-TestLogin setup run
+2018-04-08 15:29:43,106-test_login.py[line:103]-INFO-test_logincheck_moreorg successed!
+2018-04-08 15:29:43,107-test_login.py[line:40]-INFO-TestLogin setup run
+2018-04-08 15:29:43,231-test_login.py[line:119]-INFO-TestLogin test_logincheck_multi run
+2018-04-08 15:29:43,231-test_login.py[line:40]-INFO-TestLogin setup run
+2018-04-08 15:29:43,409-test_login.py[line:58]-INFO-TestLogin test_logincheck_single run
